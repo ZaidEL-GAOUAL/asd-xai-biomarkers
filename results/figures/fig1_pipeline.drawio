@@ -1,0 +1,145 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="p" name="Pipeline">
+    <mxGraphModel pageWidth="1600" pageHeight="1500" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- TITLE -->
+        <mxCell id="title" value="XAI pipeline for ASD gene-expression biomarker discovery&#10;9 phases - dual-track (gene + pathway) - 4-cohort external validation" style="text;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontStyle=1;fontColor=#0B2A4A;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="30" width="1200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- INPUT -->
+        <mxCell id="input" value="GSE18123 raw GEO expression data&#10;285 samples x 17,707 genes - 2 platforms (GPL570 + GPL6244)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F6FA;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=14;fontColor=#0B2A4A;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="120" width="600" height="66" as="geometry"/>
+        </mxCell>
+
+        <!-- PHASE 1 -->
+        <mxCell id="p1" value="Phase 1 - Multi-platform integration&#10;probe-to-gene mapping, log2 transform" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=13;fontColor=#0B2A4A;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="220" width="600" height="62" as="geometry"/>
+        </mxCell>
+
+        <!-- PHASE 2 -->
+        <mxCell id="p2" value="Phase 2 - ComBat batch correction&#10;mod=diagnosis preserved (keeps biology, removes platform)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=13;fontColor=#0B2A4A;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="305" width="600" height="62" as="geometry"/>
+        </mxCell>
+
+        <!-- PHASE 3 + RQ tag -->
+        <mxCell id="p3" value="Phase 3 - Stability selection + k-sensitivity sweep&#10;RepeatedStratifiedKFold(5,5) - k in {50, 80, 100, 150}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=13;fontColor=#0B2A4A;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="390" width="600" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3tag" value="RQ2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EEF7;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=12;fontStyle=1;fontColor=#0B2A4A;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="400" width="54" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- PHASE 4 + RQ tag -->
+        <mxCell id="p4" value="Phase 4 - Permutation null testing&#10;500 label shuffles - calibrates consensus threshold" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=13;fontColor=#0B2A4A;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="475" width="600" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4tag" value="RQ3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EEF7;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=12;fontStyle=1;fontColor=#0B2A4A;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="485" width="54" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- PHASE 5 + RQ tag -->
+        <mxCell id="p5" value="Phase 5 - Multi-seed robustness&#10;10 seeds x 3 RF tree counts = 30 runs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=13;fontColor=#0B2A4A;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="560" width="600" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5tag" value="RQ2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EEF7;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=12;fontStyle=1;fontColor=#0B2A4A;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="570" width="54" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- PHASE 6 + RQ tag -->
+        <mxCell id="p6" value="Phase 6 - Cross-model multi-XAI consensus&#10;LR (PFI, SHAP, Coef) + RF (PFI, TreeSHAP, Impurity) -> 5-of-6 majority" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=13;fontColor=#0B2A4A;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="645" width="600" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6tag" value="RQ3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EEF7;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=12;fontStyle=1;fontColor=#0B2A4A;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="655" width="54" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- SPLIT LABEL -->
+        <mxCell id="splitlbl" value="split into two parallel tracks" style="text;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontStyle=2;fontColor=#556270;" vertex="1" parent="1">
+          <mxGeometry x="600" y="720" width="400" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- GENE TRACK -->
+        <mxCell id="gbox" value="GENE-LEVEL TRACK" style="text;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#1F4E8C;" vertex="1" parent="1">
+          <mxGeometry x="120" y="755" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="gsig" value="Gene signature&#10;SPG20 - TIGD7 - CES1 - EGR1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF1FA;strokeColor=#1F4E8C;fontFamily=Arial;fontSize=14;fontStyle=1;fontColor=#1F4E8C;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="790" width="340" height="78" as="geometry"/>
+        </mxCell>
+
+        <!-- PATHWAY TRACK -->
+        <mxCell id="pbox" value="PATHWAY-LEVEL TRACK" style="text;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#2A6F3B;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="755" width="340" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7" value="Phase 7 - ssGSEA pathway activation scores&#10;KEGG 2021 + Reactome 2022 - ~2000 gene sets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2A6F3B;fontFamily=Arial;fontSize=13;fontColor=#2A6F3B;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="790" width="340" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7tag" value="RQ4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F2E9;strokeColor=#2A6F3B;fontFamily=Arial;fontSize=12;fontStyle=1;fontColor=#2A6F3B;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1494" y="802" width="54" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="psig" value="6-pathway signature&#10;MAPK1 - GPI - Nuclear Events&#10;Diphtheria Toxin - SLE - Serine Biosynthesis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF5ED;strokeColor=#2A6F3B;fontFamily=Arial;fontSize=14;fontStyle=1;fontColor=#2A6F3B;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="875" width="340" height="96" as="geometry"/>
+        </mxCell>
+
+        <!-- RECONVERGE LABEL -->
+        <mxCell id="reclbl" value="both tracks reconverge" style="text;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=12;fontStyle=2;fontColor=#556270;" vertex="1" parent="1">
+          <mxGeometry x="600" y="985" width="400" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- PHASE 8 + RQ tag -->
+        <mxCell id="p8" value="Phase 8 - External validation on 3 independent cohorts&#10;Joint 4-cohort ComBat - SMOTE + LR + RF transfer&#10;GSE25507 (lymphocytes) - GSE42133 (leukocytes) - GSE6575 (whole blood)&#10;balanced accuracy + ROC-AUC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=13;fontColor=#0B2A4A;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1020" width="800" height="112" as="geometry"/>
+        </mxCell>
+        <mxCell id="p8tag" value="RQ1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EEF7;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=12;fontStyle=1;fontColor=#0B2A4A;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="1050" width="54" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- PHASE 9 + RQ tag -->
+        <mxCell id="p9" value="Phase 9 - Biological annotation&#10;SFARI Gene Q4 2025 - Fisher's exact - Benjamini-Hochberg correction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0B2A4A;fontFamily=Arial;fontSize=13;fontColor=#0B2A4A;strokeWidth=1.5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1160" width="800" height="78" as="geometry"/>
+        </mxCell>
+        <mxCell id="p9tag" value="RQ4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F2E9;strokeColor=#2A6F3B;fontFamily=Arial;fontSize=12;fontStyle=1;fontColor=#2A6F3B;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="1177" width="54" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- OUTPUTS -->
+        <mxCell id="outg" value="Gene-level outcome&#10;0 / 6 external tests &gt; chance&#10;(gene-level RQ1 bottleneck - no transfer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF1FA;strokeColor=#1F4E8C;fontFamily=Arial;fontSize=14;fontColor=#1F4E8C;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1280" width="620" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="outp" value="Pathway-level outcome&#10;bal_acc 0.61 on GSE42133&#10;Nuclear Events pathway q_BH = 0.016 SFARI-enriched (RQ4 OK)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF5ED;strokeColor=#2A6F3B;fontFamily=Arial;fontSize=14;fontColor=#2A6F3B;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="1280" width="620" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- EDGES -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0B2A4A;strokeWidth=1.5;endArrow=classic;endFill=1;" edge="1" parent="1" source="input" target="p1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0B2A4A;strokeWidth=1.5;endArrow=classic;endFill=1;" edge="1" parent="1" source="p1" target="p2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0B2A4A;strokeWidth=1.5;endArrow=classic;endFill=1;" edge="1" parent="1" source="p2" target="p3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0B2A4A;strokeWidth=1.5;endArrow=classic;endFill=1;" edge="1" parent="1" source="p3" target="p4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0B2A4A;strokeWidth=1.5;endArrow=classic;endFill=1;" edge="1" parent="1" source="p4" target="p5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0B2A4A;strokeWidth=1.5;endArrow=classic;endFill=1;" edge="1" parent="1" source="p5" target="p6"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- split from p6 -->
+        <mxCell id="eSplitL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F4E8C;strokeWidth=1.5;endArrow=classic;endFill=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p6" target="gsig"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eSplitR" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2A6F3B;strokeWidth=1.5;endArrow=classic;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p6" target="p7"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- pathway: p7 -> psig -->
+        <mxCell id="ePath1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2A6F3B;strokeWidth=1.5;endArrow=classic;endFill=1;" edge="1" parent="1" source="p7" target="psig"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- reconverge at p8 -->
+        <mxCell id="eMergeL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F4E8C;strokeWidth=1.5;endArrow=classic;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gsig" target="p8"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eMergeR" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2A6F3B;strokeWidth=1.5;endArrow=classic;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="psig" target="p8"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- p8 -> p9 -->
+        <mxCell id="ePhase89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0B2A4A;strokeWidth=1.5;endArrow=classic;endFill=1;" edge="1" parent="1" source="p8" target="p9"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- p9 splits to two outcome boxes -->
+        <mxCell id="eOutL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1F4E8C;strokeWidth=1.5;endArrow=classic;endFill=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p9" target="outg"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eOutR" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2A6F3B;strokeWidth=1.5;endArrow=classic;endFill=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="p9" target="outp"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

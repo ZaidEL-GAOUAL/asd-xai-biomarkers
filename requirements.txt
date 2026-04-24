@@ -1,8 +1,12 @@
 numpy
 pandas
+scipy
 scikit-learn
 imbalanced-learn
+statsmodels
 GEOparse
+inmoose
 shap
 lime
 matplotlib
+gseapy>=1.1.2

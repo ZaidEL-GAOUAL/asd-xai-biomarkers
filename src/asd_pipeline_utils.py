@@ -16,10 +16,11 @@ from sklearn.preprocessing import StandardScaler
 GSE_ID = "GSE18123"
 RANDOM_STATE = 42
 
-# Base paths (relative to notebooks/ directory)
-_DATA_RAW = Path("../data/raw")
-_DATA_PROC = Path("../data/processed")
-_RESULTS = Path("../results/tables")
+# Repo-root-anchored paths. src/ is one level below repo root; go up one.
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_DATA_RAW = _REPO_ROOT / "data" / "raw"
+_DATA_PROC = _REPO_ROOT / "data" / "processed"
+_RESULTS = _REPO_ROOT / "results" / "tables"
 
 DESTDIR = str(_DATA_RAW) + "/"
 PARQUET_PATH = _DATA_PROC / "GSE18123_commonGenes_2platforms.parquet"
@@ -523,3 +524,24 @@ def run_robustness_for_k(X, y_multi, stability_df, k_val, random_state=RANDOM_ST
 
     _, _, consensus = run_xai_comparison(clf, X_sc, y_multi, xai_genes)
     return consensus, test_acc
+
+
+def stab_rank_no_resid(X, y, seed=42, n_splits=5, n_repeats=5, k=100):
+    """Stability ranking by SelectKBest in RepeatedStratifiedKFold, no residualization.
+
+    For each CV fold, fits SelectKBest(f_classif, k) on training data and counts
+    how many folds each feature was selected in. Returns a DataFrame sorted by
+    selection count. Used by stability-overlap and external-validation analyses
+    where covariate metadata is not available across all cohorts.
+    """
+    from collections import Counter
+    from sklearn.model_selection import RepeatedStratifiedKFold
+    from sklearn.feature_selection import SelectKBest, f_classif
+
+    cv = RepeatedStratifiedKFold(n_splits=n_splits, n_repeats=n_repeats, random_state=seed)
+    counts = Counter()
+    for tr, _ in cv.split(X, y):
+        sel = SelectKBest(f_classif, k=k).fit(X.iloc[tr].values, y.iloc[tr])
+        counts.update(X.columns[sel.get_support()].tolist())
+    df = pd.DataFrame([{"feature": f, "count": c} for f, c in counts.items()])
+    return df.sort_values(["count", "feature"], ascending=[False, True]).reset_index(drop=True)

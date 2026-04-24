@@ -1,0 +1,7 @@
+pathway,n_members_total,n_members_in_gse18123,strict_hits,strict_expected,strict_OR,strict_p,broad_hits,broad_expected,broad_OR,broad_p,strict_q_BH,broad_q_BH
+REACTOME:MAPK1 (ERK2) Activation R-HSA-112411,9,9,1,0.21,5.309,0.1893,1,0.51,2.077,0.4092,0.5679,0.9821
+REACTOME:Nuclear Events (Kinase And Transcription Factor Activation) R-HSA-198725,61,61,6,1.41,4.679,0.0028,10,3.46,3.279,0.0021,0.0168,0.0168
+REACTOME:Post-translational Modification: Synthesis Of GPI-anchored Proteins R-HSA-163125,92,77,1,1.77,0.557,0.8346,9,4.37,2.209,0.03,1.0,0.12
+REACTOME:Post-chaperonin Tubulin Folding Pathway R-HSA-389977,23,21,0,0.48,,1.0,0,1.19,,1.0,1.0,1.0
+REACTOME:Serine Biosynthesis R-HSA-977347,9,8,0,0.18,,1.0,0,0.45,,1.0,1.0,1.0
+REACTOME:Uptake And Function Of Diphtheria Toxin R-HSA-5336415,6,6,0,0.14,,1.0,0,0.34,,1.0,1.0,1.0
