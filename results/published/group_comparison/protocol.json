@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "created_at_utc": "2026-09-08T15:36:53.834401+00:00",
+  "input_sha256": {
+    "research/results/gene_pathway_explanations/protocol.json": "2765d013152b4fd377a439b6be53bd384a566049f4856edc484d4357d250a947",
+    "research/results/gene_pathway_explanations/summary.json": "70d67271b2ae3dbc385c30794309502cbb5ad01c3bc6e9699f2df067abbec1fe",
+    "research/COMPARISON_PLAN.md": "69d0c74350df6045e62b4a48439dd86baf9449d69f1195f3e8dc8b83e45c2651",
+    "research/results/gene_pathway_explanations/attributions/fold_0.npz": "21b73b1db5fa27f5423e75dbdc1a9c817c3868ab2304352253e9b8ff479de9d9",
+    "research/results/gene_pathway_explanations/attributions/fold_1.npz": "d43cc136b551db829bbccfe6b056227d88a23d012191d110077fa0ca453456c9",
+    "research/results/gene_pathway_explanations/attributions/fold_2.npz": "8fff9324f9ac39ff03544f6870228715870cd01ef9cb97d5bf000589162149bf",
+    "research/results/gene_pathway_explanations/attributions/fold_3.npz": "262a9fe6b56611536065af702de32030db7b9f6b8e896a8ac90f80d0e7349a66",
+    "research/results/gene_pathway_explanations/attributions/fold_4.npz": "80b5d672f9757d9d0ec9fbcaf3b9ca8ff62f682153c17be5bd5da11c0946e46f",
+    "research/src/asd_blood/compare_explanations.py": "6598dcd99fd1806ae2e2cfb5f137c5b21a827a49a019598c2165e9a6eb2ecd5b",
+    "research/src/asd_blood/explanation.py": "a3962481544e911fa5c44314a323431f1fbbb57d7d32511c9b88529d87148f54",
+    "research/src/asd_blood/common.py": "4f44e1bc6750614bcdbd88726a5c084623eb4f8d4c02cc9d5e8f6234f1b0a35e",
+    "research/src/asd_blood/pathways.py": "a2253dd74dcb428f5dae49748d92d50679bb28c183831a97e1e9f5197f387fc3",
+    "data/pathways/msigdb_2026.1.Hs/source_manifest.json": "75b1d6d7bbbaf678f117453e55500a01aacfcf2746627c63d80fe24d0ff935e0",
+    "data/pathways/msigdb_2026.1.Hs/h.all.v2026.1.Hs.entrez.gmt": "7b3c4de012b2a3aa8f90e5452c21fc8c116a31c30dd98ec00253816152ac9072",
+    "research/references/reactome/msigdb_2026.1.Hs/source_manifest.json": "8e2bf5ce6fee28053a2b90d3d7a6fef3019f5c9543b5273f3c0f6537d118cbbd",
+    "research/references/reactome/msigdb_2026.1.Hs/c2.cp.reactome.v2026.1.Hs.entrez.gmt": "b2fcb2f6c81a598df5a645333f7ecf52c7a07b782dc39b30ff390d431dc20695",
+    "research/references/collections/msigdb_2026.1.Hs/canonical/source_manifest.json": "d8f6ef4bbcdbef2d225c1585c0d71551ae9c73f20a6c4773d657e6d3ed5a7caf",
+    "research/references/collections/msigdb_2026.1.Hs/canonical/c2.cp.v2026.1.Hs.entrez.gmt": "67456c318441cecc7c96f3506912db5b7f61165989c09b6bc145029bf2306ac4",
+    "research/references/collections/msigdb_2026.1.Hs/go_bp/source_manifest.json": "9e427718c8c0654201006f3d2423ae55228a7d9bdb73af288c0a13e4259a6aa3",
+    "research/references/collections/msigdb_2026.1.Hs/go_bp/c5.go.bp.v2026.1.Hs.entrez.gmt": "aa115797c880569adc5bb4ef3a572cdb66fd01ec79ed5155c9a61f447feb8eb5",
+    "research/results/model_comparison/outer_models/fold_0_logistic_regression.joblib": "b9f4e2598f46ff253d49e4a0ef372566dd58698a791665cfde289305faef3b68",
+    "research/results/model_comparison/outer_models/fold_1_logistic_regression.joblib": "c2eeaa1837cfd8d9226de964d1869f2b3f01a6872b7e785bd0004c4a46b042c0",
+    "research/results/model_comparison/outer_models/fold_2_logistic_regression.joblib": "9d50182e0603583f5c418d90ea5fe29a0f25cb8902faab3d2b1eb1ec3e13a944",
+    "research/results/model_comparison/outer_models/fold_3_logistic_regression.joblib": "bd3e5d3e3bd4155dd2c2c24cc12876c630365f8c3fe3be57ed876fb8f998377e",
+    "research/results/model_comparison/outer_models/fold_4_logistic_regression.joblib": "884322add754efdfe779612ba34e078ff9da3b1097c0a5061e2888b8857af0f9"
+  },
+  "collections": [
+    "hallmark",
+    "reactome",
+    "canonical",
+    "go_bp"
+  ],
+  "size_rules": {
+    "primary": [
+      1,
+      null
+    ],
+    "size_15_500": [
+      15,
+      500
+    ]
+  },
+  "gene_top_k": 20,
+  "group_top_k": 5,
+  "random_draws": 100,
+  "random_seed": 20260908,
+  "prepared_data_access": false,
+  "models_fitted": false,
+  "gene_shap_recomputed": false,
+  "test_evaluated": false,
+  "python_version": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+  "numpy_version": "2.3.5",
+  "source_population": "five saved outer-validation SHAP arrays, 261 development records",
+  "completed_at_utc": "2026-09-08T15:37:22.629606+00:00",
+  "source_files_opened": [
+    "research/results/gene_pathway_explanations/attributions/fold_0.npz",
+    "research/results/gene_pathway_explanations/attributions/fold_1.npz",
+    "research/results/gene_pathway_explanations/attributions/fold_2.npz",
+    "research/results/gene_pathway_explanations/attributions/fold_3.npz",
+    "research/results/gene_pathway_explanations/attributions/fold_4.npz",
+    "research/results/gene_pathway_explanations/protocol.json",
+    "research/results/gene_pathway_explanations/summary.json",
+    "research/results/model_comparison/outer_models/fold_0_logistic_regression.joblib",
+    "research/results/model_comparison/outer_models/fold_1_logistic_regression.joblib",
+    "research/results/model_comparison/outer_models/fold_2_logistic_regression.joblib",
+    "research/results/model_comparison/outer_models/fold_3_logistic_regression.joblib",
+    "research/results/model_comparison/outer_models/fold_4_logistic_regression.joblib"
+  ],
+  "input_hashes_unchanged": true,
+  "original_hallmark_reproduced": true
+}

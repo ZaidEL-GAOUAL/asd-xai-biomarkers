@@ -1,0 +1,33 @@
+{
+  "collection": "MSigDB human Reactome (C2:CP:REACTOME)",
+  "version": "2026.1.Hs",
+  "upstream_reactome_version": 95,
+  "organism": "Homo sapiens",
+  "identifier_type": "NCBI Entrez Gene ID",
+  "file": "c2.cp.reactome.v2026.1.Hs.entrez.gmt",
+  "source_url": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2026.1.Hs/c2.cp.reactome.v2026.1.Hs.entrez.gmt",
+  "official_index": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2026.1.Hs/",
+  "release_notes_url": "https://docs.gsea-msigdb.org/MSigDB/Release_Notes/MSigDB_2026.1.Hs/",
+  "retrieved_date_utc": "2026-09-08",
+  "sha256": "b2fcb2f6c81a598df5a645333f7ecf52c7a07b782dc39b30ff390d431dc20695",
+  "bytes": 820661,
+  "expected_sets": 1839,
+  "modifications": "None. Original official GMT bytes retained.",
+  "upstream_processing": "MSigDB subset of Reactome 95, with upstream redundancy filtering by Jaccard similarity and pathway hierarchy; not the entire live Reactome database.",
+  "selection_rationale": "Preselected broader curated pathway collection before gene coverage or explanation scores were calculated; preserve Hallmark as comparator.",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0), for the MSigDB-distributed gene sets",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "terms_url": "https://www.gsea-msigdb.org/gsea/msigdb/msigdb_license_terms.jsp",
+  "license_evidence_url": "https://www.gsea-msigdb.org/gsea/msigdb/cards/REACTOME_S_PHASE",
+  "attribution": "MSigDB: Broad Institute, Massachusetts Institute of Technology, and Regents of the University of California. Original pathway knowledge: Reactome.",
+  "citations": [
+    {
+      "reference": "Ragueneau et al. (2026 issue; online 2025). The Reactome Knowledgebase 2026.",
+      "doi": "10.1093/nar/gkaf1223"
+    },
+    {
+      "reference": "Subramanian et al. (2005). Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles.",
+      "doi": "10.1073/pnas.0506580102"
+    }
+  ]
+}

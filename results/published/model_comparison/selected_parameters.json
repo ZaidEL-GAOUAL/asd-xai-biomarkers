@@ -1,0 +1,16 @@
+{
+  "logistic_regression": {
+    "C": 0.001,
+    "class_weight": "balanced"
+  },
+  "random_forest": {
+    "class_weight": "balanced",
+    "max_depth": 5,
+    "min_samples_leaf": 5
+  },
+  "knn": {
+    "metric": "manhattan",
+    "n_neighbors": 5,
+    "weights": "distance"
+  }
+}

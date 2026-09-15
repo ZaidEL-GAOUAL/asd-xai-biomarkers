@@ -1,103 +1,80 @@
-# Multi-XAI Consensus for ASD Biomarker Discovery
+# ASD blood expression and explainable classification
 
-Explainable AI (XAI) comparison pipeline for identifying robust gene expression biomarkers in Autism Spectrum Disorder from blood transcriptomic data, and testing their cross-cohort reproducibility at both the gene level and the pathway level.
-
-## Key findings
-
-This thesis produces two parallel analysis tracks (gene-level and pathway-level) with rigorous internal validity and cross-cohort external validation on 3 independent datasets.
-
-### Gene-level track (primary): cohort-specific, fails external replication
-
-- **GSE18123 (n=285, whole blood)**: robust 4-gene signature — **SPG20, TIGD7, CES1, EGR1** (5/6 multi-XAI consensus, null-resistant, multi-seed stable, config-invariant).
-- Cross-cohort transfer (GSE18123 → GSE25507 / GSE42133 / GSE6575) is at chance (bal_acc 0.44 – 0.54 in all 6 LR + RF transfers). 
-- 0/4 primary genes appear in the multi-seed consensus of any external cohort — including GSE6575 which matches tissue and platform exactly.
-- Other cohorts produce their own disjoint signatures (GSE25507: RAB8A/LIX1/HIST1H2BG; GSE42133: MRRF/AK3/TFAP2A/TSHZ2) that likewise do not replicate elsewhere. The gene-level story is a clean, rigorous **negative external-validation finding**.
-
-### Pathway-level track (secondary): partial cross-cohort replication + real biology
-
-The same pipeline run on ssGSEA pathway activation scores (KEGG + Reactome, ~2000 pathways) produces a 6-pathway multi-seed signature:
-
-- REACTOME: **MAPK1 (ERK2) Activation** — canonical RASopathy pathway, long-established ASD link
-- REACTOME: **GPI-anchored Protein Synthesis** — PIGA/PIGN/PIGT mutations cause ID + autism
-- REACTOME: Uptake and Function of Diphtheria Toxin
-- REACTOME: **Nuclear Events (Kinase and Transcription Factor Activation)**
-- KEGG: Systemic Lupus Erythematosus (immune gene module)
-- REACTOME: **Serine Biosynthesis** — D-serine is an NMDA receptor co-agonist
-
-**Three findings at the pathway level that the gene-level track does not deliver:**
-
-1. **Transfer above chance on one external cohort.** On GSE42133, the 6-pathway signature achieves bal_acc 0.608 (LR) / 0.617 (RF), where the 4-gene signature gives 0.457 / 0.486.
-2. **Cross-cohort pathway stability.** REACTOME: Serine Biosynthesis appears in the top-200 of GSE42133 AND the top-19 of GSE6575 stability rankings — the only pathway with cohort-independent selection signal.
-3. **Biological grounding via SFARI enrichment.** The **Nuclear Events (Kinase/TF Activation) pathway is statistically enriched for SFARI Score 1 + Syndromic ASD genes**: 6 of 61 expressed members are SFARI-curated (OR = 4.74, Fisher p = 0.0026, **q_BH = 0.016** after BH correction across all pathway tests). The 6 SFARI hits — **CHD4, EP300, MEF2C, PPP2CA, PPP2R5D, RPS6KA3** — are canonical neurodevelopmental genes (MEF2C haploinsufficiency syndrome, Coffin-Lowry, Jordan's syndrome, Rubinstein-Taybi). KEGG: Systemic Lupus Erythematosus additionally contains GRIN2A + GRIN2B (NMDA receptor subunits; major ASD genes), and MAPK1 contains PTPN11 (Noonan syndrome).
-
-The XAI pipeline, blind to SFARI during training, independently identifies a pathway significantly enriched for canonical SFARI ASD genes.
-
-### Methodological conclusion
-
-Rigorous internal validity is necessary but not sufficient for cross-cohort **gene-level** biomarker generalization in blood ASD transcriptomics — the 4-gene discovery signature is cohort-specific across 4 independent cohorts. The same pipeline at the **pathway level** (a) identifies published ASD-relevant pathways, (b) is statistically significantly enriched for canonical SFARI ASD genes in one pathway (q_BH = 0.016), (c) transfers to one of three external cohorts above chance, and (d) has one pathway (Serine Biosynthesis) that shows cross-cohort stability. Pathway-level abstraction is the more defensible unit of analysis for ASD blood transcriptomics at current sample sizes.
+Pipeline for preparing whole-blood expression data, comparing logistic regression,
+Random Forest and KNN, and examining gene SHAP explanations through biological
+groups. Grouping changes the explanation summary, not the model's predictions.
 
 ## Pipeline
 
-```
+Run the numbered steps in order. Setup and required input files are described in
+[scripts/pipeline/README.md](scripts/pipeline/README.md).
+
+```text
 scripts/pipeline/
-├── 00_base_preprocessing.py                    # GEO download + probe-to-gene mapping for GSE18123
-├── 01_combat_with_mod_diagnosis.py             # ComBat batch correction on GSE18123
-├── 02_stability_selection.py                   # Gene-level stability + k-sensitivity sweep (v2 Step 9) + leakage-safety demo
-├── 03_lr_vs_rf_xai_consensus.py                # Gene-level LR + RF multi-XAI consensus
-├── 04_permutation_null.py                      # Null tests for stability and consensus
-├── 05_multiseed_robustness.py                  # 30-run multi-seed robustness (10 seeds × 3 tree counts)
-├── 06_pathway_analysis.py                      # Pathway-level track: ssGSEA + stability + XAI + null + multi-seed
-├── 07_external_validation.py                   # Unified: gene + pathway signatures tested on 3 external cohorts
-├── 08_biological_annotation.py                 # SFARI annotation of gene + pathway-member signatures
-└── README.md                                   # Execution order, dependencies, runtimes
+  00_download_data.py          verify metadata and download raw arrays
+  01_normalize_arrays.R       normalize each array with frozen RMA
+  02_prepare_data.py          match genes, apply QC and prepare the split
+  03_download_references.py   obtain the frozen biological collections
+  04_train_models.py          compare logistic regression, RF and KNN
+  05_gene_explanations.py     calculate gene SHAP and Hallmark summaries
+  06_gene_set_coverage.py     check reference coverage
+  07_compare_explanations.py  compare biological-group explanations
 
-scripts/appendix/
-├── age_only_control.py                         # Residualization-config sensitivity (age only)
-└── no_resid_control.py                         # Residualization-config sensitivity (no residualization)
+src/                         shared implementation
+data/                        source configurations and reference records
+results/published/           saved aggregate results and analysis plots
+scripts/notebooks/           four notebooks for reading those results
+scripts/tools/               result checks and notebook/plot generation
 ```
-
-See `scripts/pipeline/README.md` for per-script input/output/runtime details.
 
 ## Setup
 
-```bash
-pip install -r requirements.txt
-```
-
-Then run the pipeline in numerical order:
+Use Python 3.13 and the recorded dependencies:
 
 ```bash
-python scripts/pipeline/00_base_preprocessing.py
-python scripts/pipeline/01_combat_with_mod_diagnosis.py
-# Scripts 02-05 are the gene-level track (independent after 01 completes).
-# Script 06 is the pathway-level track (depends on 01).
-# Script 07 unifies external validation for both tracks (depends on 03, 05, 06).
-# Script 08 is the biological annotation layer (depends on 05, 06).
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 ```
 
-All scripts resolve paths relative to the repo root; run them from any working directory.
+Normalization additionally requires R 4.5 and Bioconductor 3.22. Follow the
+[execution guide](scripts/pipeline/README.md) before downloading or processing data.
+The numbered Python scripts locate the repository and run its shared code.
 
-## Data
+## Read existing results
 
-| Dataset | Samples | Tissue | Platform | Role |
-|---------|---------|--------|----------|------|
-| GSE18123 | 285 (115 ctrl, 72 aut, 24 asp, 74 PDD-NOS) | Whole blood | GPL570 + GPL6244 | Discovery |
-| GSE25507 | 146 (64 ctrl, 82 aut) | Lymphocytes | GPL570 | External validation |
-| GSE42133 | 147 (56 ctrl, 91 ASD) | Leukocytes | GPL10558 (Illumina) | External validation |
-| GSE6575 | 47 ASD+ctrl (35 ASD, 12 typical; 9 MR/DD excluded) | Whole blood | GPL570 | Like-for-like replication (tissue + platform match to GSE18123) |
+Open the notebooks in numerical order under `scripts/notebooks/`. They display
+saved aggregate results only; executing them does not retrain the models.
+New analysis runs write under `results/`, separately from `results/published/`.
 
-GEO SOFT files are cached in `data/raw/` (gitignored for size). Processed matrices in `data/processed/` (GSE18123 only) and `results/processed/` (joint ComBat parquets + ssGSEA pathway scores).
+The recorded study uses 327 assay records from GSE18123 and GSE6575, with
+261 development records, 66 historical internal test records and 17,263 shared
+genes. These are not a verified count of unrelated people. Logistic regression
+had 75.1% mean outer-fold accuracy and 74.8% balanced accuracy in the saved run.
+Biological grouping did not establish consistently better explanations.
 
-SFARI Gene reference (Q4 2025 snapshot) bundled at `data/reference/sfari_genes.csv` with attribution. KEGG_2021_Human and Reactome_2022 gene sets bundled at `data/reference/gene_sets/` (downloaded from Enrichr).
+The test partition was examined historically. This is exploratory research,
+not a clinically validated diagnostic tool. The model search and full data
+processing were not repeated when simplifying the folder layout. Saved JSON
+provenance retains the paths and hashes of the original run; a fresh run records
+the current paths and code hashes. Do not mix old model files with a new run.
 
-## Results
+## Sources and scope
 
-Main outputs in `results/`:
+The six source manifests are required input configurations for locating and
+checking the original data and biological-reference versions. Raw patient-level
+files, fitted models and restricted gene-set downloads are not included.
+See [sources and method references](data/reference/REFERENCES.md) and
+[reference terms](data/reference/collections/README.md).
 
-- `results/figures/` — PCA plots, consensus figures, robustness figures, external validation comparison, pathway consensus bar chart
-- `results/tables/` — per-gene, per-run, per-cohort numerical tables, pathway signature + SFARI annotation, external validation transfer summaries
-- `results/processed/` — ComBat-corrected gene matrices (single, 3-cohort joint, 4-cohort joint) + ssGSEA pathway score matrices
+This folder contains no progress report, literature-review document or Draw.io
+diagram. Only actual analysis plots accompany the saved results. No open-source
+license is granted by this copy; the author must choose a code license before
+offering licensed reuse. Reference data retain their providers' terms.
 
-## Project status
+## AI assistance
 
-Code pipeline is complete. Thesis writeup is pending. Biological interpretation chapter: gene-level (negative/cohort-specific) + pathway-level (positive in one cohort + SFARI-enriched Nuclear Events pathway).
+AI tools assisted with explanations of concepts, literature identification,
+programming and debugging, execution of computational analyses, and documentation.
+The author is responsible for checking the sources, methods and interpretations
+and for meeting institutional disclosure requirements before submission.

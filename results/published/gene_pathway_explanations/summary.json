@@ -1,0 +1,123 @@
+{
+  "sample_count": 261,
+  "gene_count": 17263,
+  "pathway_count": 50,
+  "covered_gene_count": 4211,
+  "covered_gene_fraction": 0.24393210913514454,
+  "unassigned_absolute_gene_share": 0.7646427810359667,
+  "random_draws": 100,
+  "observed": {
+    "mean_covered_gene_overlap": 0.24,
+    "mean_all_gene_overlap": 0.02,
+    "mean_pathway_jaccard": 0.3353174603174603
+  },
+  "mean_pairwise_topk_jaccard": {
+    "genes_all": 0.0647908753171911,
+    "genes_covered": 0.07570728623360203,
+    "pathways": 0.3353174603174603
+  },
+  "random_control_comparison": {
+    "mean_covered_gene_overlap": {
+      "observed": 0.24,
+      "random_mean": 0.2645,
+      "random_q025": 0.18,
+      "random_q975": 0.3552499999999999,
+      "midrank_percentile": 32.0
+    },
+    "mean_all_gene_overlap": {
+      "observed": 0.02,
+      "random_mean": 0.04629999999999999,
+      "random_q025": 0.014750000000000001,
+      "random_q975": 0.09524999999999992,
+      "midrank_percentile": 7.000000000000001
+    },
+    "mean_pathway_jaccard": {
+      "observed": 0.3353174603174603,
+      "random_mean": 0.325345238095238,
+      "random_q025": 0.18660714285714286,
+      "random_q975": 0.49151785714285695,
+      "midrank_percentile": 59.5
+    }
+  },
+  "fold_audit": [
+    {
+      "fold": 0,
+      "train_count": 209,
+      "validation_count": 52,
+      "model_gene_count": 17263,
+      "background_count": 209,
+      "max_formula_error": 0.0,
+      "max_reconstruction_error": 8.171241461241152e-14,
+      "params": {
+        "C": 10.0,
+        "class_weight": "balanced"
+      }
+    },
+    {
+      "fold": 1,
+      "train_count": 208,
+      "validation_count": 53,
+      "model_gene_count": 17263,
+      "background_count": 208,
+      "max_formula_error": 0.0,
+      "max_reconstruction_error": 1.509903313490213e-14,
+      "params": {
+        "C": 0.001,
+        "class_weight": null
+      }
+    },
+    {
+      "fold": 2,
+      "train_count": 208,
+      "validation_count": 53,
+      "model_gene_count": 17263,
+      "background_count": 208,
+      "max_formula_error": 0.0,
+      "max_reconstruction_error": 2.398081733190338e-14,
+      "params": {
+        "C": 0.01,
+        "class_weight": "balanced"
+      }
+    },
+    {
+      "fold": 3,
+      "train_count": 209,
+      "validation_count": 52,
+      "model_gene_count": 17263,
+      "background_count": 209,
+      "max_formula_error": 0.0,
+      "max_reconstruction_error": 3.730349362740526e-14,
+      "params": {
+        "C": 0.1,
+        "class_weight": "balanced"
+      }
+    },
+    {
+      "fold": 4,
+      "train_count": 210,
+      "validation_count": 51,
+      "model_gene_count": 17263,
+      "background_count": 210,
+      "max_formula_error": 0.0,
+      "max_reconstruction_error": 8.881784197001252e-14,
+      "params": {
+        "C": 0.1,
+        "class_weight": null
+      }
+    }
+  ],
+  "input_files_opened": [
+    "X_train_log2.csv.gz",
+    "gene_dictionary.csv",
+    "metadata_train.csv",
+    "y_train.csv"
+  ],
+  "test_evaluated": false,
+  "sfari_comparison": {
+    "method": "exact_symbol_descriptive_only",
+    "universe_exact_matches": 1188,
+    "universe_score_1_or_2": 874,
+    "top20_exact_matches": 1,
+    "top20_score_1_or_2": 1
+  }
+}

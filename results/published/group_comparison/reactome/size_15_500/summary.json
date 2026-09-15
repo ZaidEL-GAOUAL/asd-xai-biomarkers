@@ -1,0 +1,172 @@
+{
+  "collection": "reactome",
+  "label": "Reactome",
+  "size_rule": "size_15_500",
+  "source_group_count": 1839,
+  "included_group_count": 1153,
+  "zero_match_groups": 0,
+  "excluded_by_size_count": 686,
+  "covered_gene_count": 9665,
+  "covered_gene_fraction": 0.559867925621271,
+  "covered_absolute_gene_attribution_fraction": 0.5468515342973954,
+  "groups_with_one_to_four_genes": 0,
+  "groups_above_500_genes": 0,
+  "group_size_min": 15,
+  "group_size_median": 38.0,
+  "group_size_max": 496,
+  "genes_in_multiple_groups": 8630,
+  "max_gene_membership_count": 307,
+  "identical_mapped_group_labels": [],
+  "observed": {
+    "mean_covered_gene_overlap": 0.16999999999999998,
+    "mean_all_gene_overlap": 0.08,
+    "mean_pathway_jaccard": 0.5
+  },
+  "random_control_comparison": {
+    "mean_covered_gene_overlap": {
+      "observed": 0.16999999999999998,
+      "random_mean": 0.1363,
+      "random_q025": 0.06475,
+      "random_q975": 0.2152499999999999,
+      "midrank_percentile": 76.5
+    },
+    "mean_all_gene_overlap": {
+      "observed": 0.08,
+      "random_mean": 0.0651,
+      "random_q025": 0.02,
+      "random_q975": 0.11524999999999992,
+      "midrank_percentile": 71.50000000000001
+    },
+    "mean_pathway_jaccard": {
+      "observed": 0.5,
+      "random_mean": 0.5047182539682539,
+      "random_q025": 0.3490079365079365,
+      "random_q975": 0.6932142857142856,
+      "midrank_percentile": 54.0
+    }
+  },
+  "max_logit_reconstruction_error": 1.2434497875801753e-13,
+  "top_groups": [
+    {
+      "rank": 1,
+      "group": "REACTOME_NEUTROPHIL_DEGRANULATION",
+      "measured_gene_count": 444,
+      "mean_absolute_signed_allocation_log_odds": 0.073454340372951,
+      "mean_signed_allocation_log_odds": 0.0034937088565936162,
+      "mean_absolute_gene_mass_log_odds": 0.5908846801519613,
+      "mean_cancellation_fraction": 0.8726435300833247,
+      "top_driver_gene_id": "6036",
+      "top_driver_mass_share": 0.024444215916157214,
+      "top5_driver_mass_share": 0.09274851618122931
+    },
+    {
+      "rank": 2,
+      "group": "REACTOME_IMMUNOREGULATORY_INTERACTIONS_BETWEEN_A_LYMPHOID_AND_A_NON_LYMPHOID_CELL",
+      "measured_gene_count": 110,
+      "mean_absolute_signed_allocation_log_odds": 0.05849993545267712,
+      "mean_signed_allocation_log_odds": 0.002626862613822847,
+      "mean_absolute_gene_mass_log_odds": 0.31340449569043016,
+      "mean_cancellation_fraction": 0.8097361016276994,
+      "top_driver_gene_id": "339390",
+      "top_driver_mass_share": 0.04250818994940647,
+      "top5_driver_mass_share": 0.1835268786097793
+    },
+    {
+      "rank": 3,
+      "group": "REACTOME_METABOLISM_OF_AMINO_ACIDS_AND_DERIVATIVES",
+      "measured_gene_count": 311,
+      "mean_absolute_signed_allocation_log_odds": 0.05102412218154728,
+      "mean_signed_allocation_log_odds": 0.0011284326153010458,
+      "mean_absolute_gene_mass_log_odds": 0.4516550610262081,
+      "mean_cancellation_fraction": 0.8807778398569803,
+      "top_driver_gene_id": "29968",
+      "top_driver_mass_share": 0.02400476885508648,
+      "top5_driver_mass_share": 0.1075307862741199
+    },
+    {
+      "rank": 4,
+      "group": "REACTOME_SLC_MEDIATED_TRANSMEMBRANE_TRANSPORT",
+      "measured_gene_count": 230,
+      "mean_absolute_signed_allocation_log_odds": 0.03820216301893047,
+      "mean_signed_allocation_log_odds": 0.00339553352342049,
+      "mean_absolute_gene_mass_log_odds": 0.31948222774287693,
+      "mean_cancellation_fraction": 0.8814588015093987,
+      "top_driver_gene_id": "146802",
+      "top_driver_mass_share": 0.032146110157734616,
+      "top5_driver_mass_share": 0.10479701196166387
+    },
+    {
+      "rank": 5,
+      "group": "REACTOME_KERATINIZATION",
+      "measured_gene_count": 118,
+      "mean_absolute_signed_allocation_log_odds": 0.03454255456421303,
+      "mean_signed_allocation_log_odds": 0.00458228334047037,
+      "mean_absolute_gene_mass_log_odds": 0.2051261375404542,
+      "mean_cancellation_fraction": 0.8412509222840682,
+      "top_driver_gene_id": "85293",
+      "top_driver_mass_share": 0.04494857374194068,
+      "top5_driver_mass_share": 0.14594789182911824
+    },
+    {
+      "rank": 6,
+      "group": "REACTOME_CHROMATIN_ORGANIZATION",
+      "measured_gene_count": 250,
+      "mean_absolute_signed_allocation_log_odds": 0.03343146901925747,
+      "mean_signed_allocation_log_odds": -0.0014442824165205811,
+      "mean_absolute_gene_mass_log_odds": 0.1921199349424565,
+      "mean_cancellation_fraction": 0.8305209277018499,
+      "top_driver_gene_id": "11240",
+      "top_driver_mass_share": 0.03496193950811198,
+      "top5_driver_mass_share": 0.15037344481553985
+    },
+    {
+      "rank": 7,
+      "group": "REACTOME_CELL_SURFACE_INTERACTIONS_AT_THE_VASCULAR_WALL",
+      "measured_gene_count": 129,
+      "mean_absolute_signed_allocation_log_odds": 0.033424423956738794,
+      "mean_signed_allocation_log_odds": 0.002392783036784711,
+      "mean_absolute_gene_mass_log_odds": 0.1751566715799948,
+      "mean_cancellation_fraction": 0.8100153574598659,
+      "top_driver_gene_id": "29802",
+      "top_driver_mass_share": 0.08556771636976826,
+      "top5_driver_mass_share": 0.25786644998576774
+    },
+    {
+      "rank": 8,
+      "group": "REACTOME_METABOLISM_OF_CARBOHYDRATES_AND_CARBOHYDRATE_DERIVATIVES",
+      "measured_gene_count": 285,
+      "mean_absolute_signed_allocation_log_odds": 0.032563634524319096,
+      "mean_signed_allocation_log_odds": -0.0013185377682359805,
+      "mean_absolute_gene_mass_log_odds": 0.23689032566481735,
+      "mean_cancellation_fraction": 0.8674176858610899,
+      "top_driver_gene_id": "4123",
+      "top_driver_mass_share": 0.03829035643858754,
+      "top5_driver_mass_share": 0.15073570558877133
+    },
+    {
+      "rank": 9,
+      "group": "REACTOME_RRNA_PROCESSING",
+      "measured_gene_count": 173,
+      "mean_absolute_signed_allocation_log_odds": 0.031237141900502596,
+      "mean_signed_allocation_log_odds": 0.002953608087618138,
+      "mean_absolute_gene_mass_log_odds": 0.1814603314465389,
+      "mean_cancellation_fraction": 0.817197409295008,
+      "top_driver_gene_id": "23481",
+      "top_driver_mass_share": 0.0720812411915696,
+      "top5_driver_mass_share": 0.18848861889685886
+    },
+    {
+      "rank": 10,
+      "group": "REACTOME_PROCESSING_OF_CAPPED_INTRON_CONTAINING_PRE_MRNA",
+      "measured_gene_count": 271,
+      "mean_absolute_signed_allocation_log_odds": 0.03088180660647942,
+      "mean_signed_allocation_log_odds": 0.0004591180951034767,
+      "mean_absolute_gene_mass_log_odds": 0.17370728400851843,
+      "mean_cancellation_fraction": 0.8312641685265196,
+      "top_driver_gene_id": "29107",
+      "top_driver_mass_share": 0.027227832744043525,
+      "top5_driver_mass_share": 0.12108055499840792
+    }
+  ],
+  "records_explained": 261
+}

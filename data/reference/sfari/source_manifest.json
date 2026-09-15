@@ -1,0 +1,51 @@
+{
+  "resource": "SFARI Gene Human Gene module",
+  "publisher": "Simons Foundation Autism Research Initiative; data curated by MindSpec",
+  "release_label": "2026 Q2",
+  "database_update_date": "2026-07-12",
+  "retrieved_on": "2026-09-08",
+  "verified_at_utc": "2026-09-08T12:13:42Z",
+  "landing_page": "https://gene.sfari.org/database/human-gene/",
+  "download_url": "https://gene.sfari.org//wp-content/themes/sfari-gene/utilities/download-csv.php?api-endpoint=genes",
+  "download_discovery": "Official Human Gene module: Download this dataset link; no authentication or patient-level data",
+  "release_notes_url": "https://gene.sfari.org/sfari-gene-release-notes-for-q2-2026/",
+  "scoring_guide_url": "https://gene.sfari.org/about-gene-scoring/",
+  "terms_url": "https://gene.sfari.org/terms-and-privacy/",
+  "terms_version": "Terms and Conditions version 1, effective 2017-06-22; inspected 2026-09-08",
+  "terms_summary": "The site encourages inclusion of data in publications with citation of primary sources, the SFARI Gene website and relevant database publications. No general Creative Commons licence is asserted here. SFARI names and logos do not imply endorsement.",
+  "attribution": "SFARI Gene, Simons Foundation Autism Research Initiative. Human Gene module, release 2026 Q2, database updated 12 July 2026, accessed 8 September 2026. https://gene.sfari.org/",
+  "raw_file": "human_genes_download.csv",
+  "raw_sha256": "ec3b830ab3f4e185d4d912b6e46a9bca79db39fafd107b37d8b48421be4772d2",
+  "raw_bytes": 145146,
+  "clean_file": "human_genes.csv",
+  "clean_sha256": "8376c34eaf90cbea7564d0de753247fd88eebee178e75b0973c839e654366542",
+  "clean_bytes": 33649,
+  "rows": 1289,
+  "column_projection": {
+    "gene_id": "ensembl-id",
+    "gene_symbol": "gene-symbol",
+    "score": "gene-score",
+    "syndromic": "syndromic"
+  },
+  "gene_id_namespace": "Ensembl human gene ID, not NCBI Entrez",
+  "transformations": "Header projection only; original row order and values preserved; UTF-8 CSV with LF line endings; source missing values retained as empty fields; no filtering, alias resolution or evidence-score imputation",
+  "score_categories": {
+    "1": "High Confidence",
+    "2": "Strong Candidate",
+    "3": "Suggestive Evidence",
+    "empty": "No numeric category in this download; not negative evidence"
+  },
+  "syndromic_semantics": "Separate source indicator: 1 indicates syndromic designation; 0 indicates no syndromic designation in the downloaded column. Retained independently of numeric score.",
+  "validation": {
+    "matches_official_page_total": true,
+    "unique_gene_symbols": 1289,
+    "unique_nonmissing_ensembl_ids": 1284,
+    "missing_ensembl_ids": 5,
+    "numeric_score_counts": {"1": 245, "2": 712, "3": 238},
+    "missing_numeric_scores": 94,
+    "permitted_score_and_syndromic_values_checked": true,
+    "projected_csv_round_trip_exact": true
+  },
+  "intended_use": "Descriptive biological-context annotation of explanation-driving genes after model fitting; not feature selection or patient diagnosis",
+  "interpretation_limit": "No exact reference match means unmatched to this snapshot, not absence of an ASD association. Genetic-risk evidence is not equivalent to whole-blood expression biomarker evidence."
+}

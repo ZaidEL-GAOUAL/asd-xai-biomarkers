@@ -1,0 +1,23 @@
+{
+  "collection": "MSigDB human GO Biological Process (C5:GO:BP)",
+  "version": "2026.1.Hs",
+  "organism": "Homo sapiens",
+  "identifier_type": "NCBI Entrez Gene ID",
+  "file": "c5.go.bp.v2026.1.Hs.entrez.gmt",
+  "source_url": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2026.1.Hs/c5.go.bp.v2026.1.Hs.entrez.gmt",
+  "release_notes_url": "https://docs.gsea-msigdb.org/MSigDB/Release_Notes/MSigDB_2026.1.Hs/",
+  "upstream_ontology_date": "2025-10-10",
+  "upstream_ncbi_gene2go_download_date": "2025-12-14",
+  "retrieved_date_utc": "2026-09-08",
+  "sha256": "aa115797c880569adc5bb4ef3a572cdb66fd01ec79ed5155c9a61f447feb8eb5",
+  "bytes": 4503469,
+  "expected_sets": 7538,
+  "modifications": "None. Official GMT bytes retained unchanged.",
+  "selection": "Preselected broader biological-process comparison, irrespective of coverage or XAI results. Not exclusively reaction pathways.",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "terms_url": "https://www.gsea-msigdb.org/gsea/msigdb_license_terms.jsp",
+  "upstream_terms_url": "https://geneontology.org/docs/go-citation-policy/",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Gene Ontology Consortium; MSigDB: Broad Institute, Massachusetts Institute of Technology, and Regents of the University of California. Data provided AS-IS without warranty; retain source version and copyright attribution.",
+  "citations": ["10.1038/75556", "10.1093/nar/gkaf1292", "10.1073/pnas.0506580102"]
+}

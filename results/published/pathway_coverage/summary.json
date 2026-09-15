@@ -1,0 +1,53 @@
+{
+  "collections": {
+    "Hallmark": {
+      "gene_set_count": 50,
+      "project_gene_count": 17263,
+      "reference_unique_gene_count": 4384,
+      "covered_project_gene_count": 4211,
+      "project_gene_coverage_fraction": 0.24393210913514454,
+      "uncovered_project_gene_count": 13052,
+      "unmeasured_reference_gene_count": 173,
+      "matched_genes_per_set_min": 31,
+      "matched_genes_per_set_median": 171.0,
+      "matched_genes_per_set_max": 199,
+      "sets_with_zero_matches": [],
+      "sets_with_one_to_four_matches": 0,
+      "covered_genes_in_multiple_sets": 1666,
+      "largest_memberships_for_one_gene": 10,
+      "identical_nonempty_matched_set_groups": [],
+      "duplicate_within_set_memberships_removed": 0
+    },
+    "Reactome": {
+      "gene_set_count": 1839,
+      "project_gene_count": 17263,
+      "reference_unique_gene_count": 11448,
+      "covered_project_gene_count": 10025,
+      "project_gene_coverage_fraction": 0.5807217748942826,
+      "uncovered_project_gene_count": 7238,
+      "unmeasured_reference_gene_count": 1423,
+      "matched_genes_per_set_min": 1,
+      "matched_genes_per_set_median": 21,
+      "matched_genes_per_set_max": 1353,
+      "sets_with_zero_matches": [],
+      "sets_with_one_to_four_matches": 26,
+      "covered_genes_in_multiple_sets": 9613,
+      "largest_memberships_for_one_gene": 351,
+      "identical_nonempty_matched_set_groups": [
+        [
+          "REACTOME_LOSS_OF_FUNCTION_OF_SMAD2_3_IN_CANCER",
+          "REACTOME_SIGNALING_BY_TGF_BETA_RECEPTOR_COMPLEX_IN_CANCER"
+        ]
+      ],
+      "duplicate_within_set_memberships_removed": 0
+    }
+  },
+  "comparison": {
+    "genes_in_both": 3524,
+    "reactome_only_gene_count": 6501,
+    "hallmark_only_gene_count": 687,
+    "union_covered_gene_count": 10712,
+    "union_gene_coverage_fraction": 0.6205178705902797,
+    "union_is_descriptive_not_selected_analysis": true
+  }
+}

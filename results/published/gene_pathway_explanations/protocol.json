@@ -1,0 +1,48 @@
+{
+  "recorded_at_utc": "2026-09-08T12:18:18.806199+00:00",
+  "status": "complete",
+  "analysis": "outer-validation logistic-regression SHAP with allocated Hallmark summaries",
+  "gene_top_k": 20,
+  "pathway_top_k": 5,
+  "pathway_ranking": "mean absolute signed allocated contribution",
+  "shap_version": "0.51.0",
+  "explainer": "LinearExplainer",
+  "masker": "Independent, all corresponding outer-training standardized rows",
+  "output_scale": "log odds of positive class 1 (ASD)",
+  "aggregation": "split each gene equally among memberships; retain unassigned residual",
+  "random_draws": 100,
+  "random_seed": 20260908,
+  "randomization": "covered-gene label permutation, paired across folds",
+  "draw_interpretation": "exploratory midrank percentiles, not formal p-values",
+  "sfari": {
+    "file_name": "human_genes.csv",
+    "sha256": "8376c34eaf90cbea7564d0de753247fd88eebee178e75b0973c839e654366542",
+    "reference_release": "2026 Q2",
+    "manifest_sha256": "ca8062a88e51a2264e58199e2b2e35384b08cdb42e696e93caf296ff3c3bf1d6",
+    "method": "exact gene-symbol annotation; descriptive all-entry and score-1-or-2 counts",
+    "role": "external genetic-risk context, not feature selection or blood-biomarker validation"
+  },
+  "test_policy": "never read held-out test files",
+  "already_explored_training_data": true,
+  "input_sha256": {
+    "X_train_log2.csv.gz": "3bda583993a522f8932ad64d0360a65468ed3fb657b915244131fd6a3808c02b",
+    "y_train.csv": "c13a52bd8ba757f5e2fed7b30455a7a7fafc25b6ca94bd5709c632cef53b857b",
+    "metadata_train.csv": "a441437d8354f8100a68ac56d2af952a622fcd386b65e8c43438904d998ab69c",
+    "gene_dictionary.csv": "1947698234f6e4c0a0587c470af50b9f7a0c956736dc7c08c7fbceab2f643ceb"
+  },
+  "model_sha256": {
+    "fold_0_logistic_regression.joblib": "b9f4e2598f46ff253d49e4a0ef372566dd58698a791665cfde289305faef3b68",
+    "fold_1_logistic_regression.joblib": "c2eeaa1837cfd8d9226de964d1869f2b3f01a6872b7e785bd0004c4a46b042c0",
+    "fold_2_logistic_regression.joblib": "9d50182e0603583f5c418d90ea5fe29a0f25cb8902faab3d2b1eb1ec3e13a944",
+    "fold_3_logistic_regression.joblib": "bd3e5d3e3bd4155dd2c2c24cc12876c630365f8c3fe3be57ed876fb8f998377e",
+    "fold_4_logistic_regression.joblib": "884322add754efdfe779612ba34e078ff9da3b1097c0a5061e2888b8857af0f9"
+  },
+  "gmt_name": "h.all.v2026.1.Hs.entrez.gmt",
+  "gmt_sha256": "7b3c4de012b2a3aa8f90e5452c21fc8c116a31c30dd98ec00253816152ac9072",
+  "gmt_manifest_sha256": "75b1d6d7bbbaf678f117453e55500a01aacfcf2746627c63d80fe24d0ff935e0",
+  "source_code_sha256": "a3962481544e911fa5c44314a323431f1fbbb57d7d32511c9b88529d87148f54",
+  "feature_order": "gene-expression input order; ties stable in this order",
+  "pathway_order": "GMT file order; ties stable in this order",
+  "completed_at_utc": "2026-09-08T12:18:26.014107+00:00",
+  "integrity_checks_passed": true
+}

@@ -1,0 +1,219 @@
+{
+  "collection": "canonical",
+  "label": "Canonical pathways",
+  "size_rule": "primary",
+  "source_group_count": 4115,
+  "included_group_count": 4114,
+  "zero_match_groups": 1,
+  "excluded_by_size_count": 0,
+  "covered_gene_count": 11961,
+  "covered_gene_fraction": 0.6928691420958119,
+  "covered_absolute_gene_attribution_fraction": 0.6824233754453529,
+  "groups_with_one_to_four_genes": 56,
+  "groups_above_500_genes": 19,
+  "group_size_min": 1,
+  "group_size_median": 20.0,
+  "group_size_max": 1353,
+  "genes_in_multiple_groups": 10571,
+  "max_gene_membership_count": 518,
+  "identical_mapped_group_labels": [
+    [
+      "BIOCARTA_LAIR_PATHWAY",
+      "WP_CELLS_AND_MOLECULES_INVOLVED_IN_LOCAL_ACUTE_INFLAMMATORY_RESPONSE"
+    ],
+    [
+      "BIOCARTA_SUMO_PATHWAY",
+      "REACTOME_SUMO_IS_TRANSFERRED_FROM_E1_TO_E2_UBE2I_UBC9"
+    ],
+    [
+      "KEGG_ARRHYTHMOGENIC_RIGHT_VENTRICULAR_CARDIOMYOPATHY_ARVC",
+      "WP_ARRHYTHMOGENIC_RIGHT_VENTRICULAR_CARDIOMYOPATHY"
+    ],
+    [
+      "KEGG_PATHOGENIC_ESCHERICHIA_COLI_INFECTION",
+      "WP_PATHOGENIC_ESCHERICHIA_COLI_INFECTION"
+    ],
+    [
+      "KEGG_MEDICUS_REFERENCE_HEME_BIOSYNTHESIS",
+      "WP_HEMESYNTHESIS_DEFECTS_AND_PORPHYRIAS",
+      "WP_HEME_BIOSYNTHESIS"
+    ],
+    [
+      "KEGG_MEDICUS_REFERENCE_PROK_PRKR_GI_ERK_SIGNALING_PATHWAY",
+      "KEGG_MEDICUS_VARIANT_MUTATION_INACTIVATED_PROKR2_TO_PROK_PRKR_GI_ERK_SIGNALING_PATHWAY"
+    ],
+    [
+      "KEGG_MEDICUS_REFERENCE_TYROSINE_DEGRADATION",
+      "REACTOME_TYROSINE_CATABOLISM",
+      "WP_TYROSINE_METABOLISM_AND_RELATED_DISORDERS"
+    ],
+    [
+      "KEGG_MEDICUS_VARIANT_MUTATION_ACTIVATED_SMO_TO_HEDGEHOG_SIGNALING_PATHWAY",
+      "KEGG_MEDICUS_VARIANT_MUTATION_INACTIVATED_PTCH1_TO_HEDGEHOG_SIGNALING_PATHWAY"
+    ],
+    [
+      "REACTOME_LOSS_OF_FUNCTION_OF_SMAD2_3_IN_CANCER",
+      "REACTOME_SIGNALING_BY_TGF_BETA_RECEPTOR_COMPLEX_IN_CANCER"
+    ],
+    [
+      "WP_ENDOCHONDRAL_OSSIFICATION",
+      "WP_ENDOCHONDRAL_OSSIFICATION_WITH_SKELETAL_DYSPLASIAS"
+    ],
+    [
+      "WP_INSULIN_SIGNALING_IN_ADIPOCYTES_DIABETIC_CONDITION",
+      "WP_INSULIN_SIGNALING_IN_ADIPOCYTES_NORMAL_CONDITION"
+    ]
+  ],
+  "observed": {
+    "mean_covered_gene_overlap": 0.3,
+    "mean_all_gene_overlap": 0.19,
+    "mean_pathway_jaccard": 0.5952380952380952
+  },
+  "random_control_comparison": {
+    "mean_covered_gene_overlap": {
+      "observed": 0.3,
+      "random_mean": 0.2907,
+      "random_q025": 0.19,
+      "random_q975": 0.41049999999999986,
+      "midrank_percentile": 59.50000000000001
+    },
+    "mean_all_gene_overlap": {
+      "observed": 0.19,
+      "random_mean": 0.18749999999999997,
+      "random_q025": 0.1,
+      "random_q975": 0.2804999999999998,
+      "midrank_percentile": 54.0
+    },
+    "mean_pathway_jaccard": {
+      "observed": 0.5952380952380952,
+      "random_mean": 0.5349642857142858,
+      "random_q025": 0.3806547619047619,
+      "random_q975": 0.7333333333333334,
+      "midrank_percentile": 73.5
+    }
+  },
+  "max_logit_reconstruction_error": 9.592326932761353e-14,
+  "top_groups": [
+    {
+      "rank": 1,
+      "group": "REACTOME_RNA_POLYMERASE_II_TRANSCRIPTION",
+      "measured_gene_count": 1242,
+      "mean_absolute_signed_allocation_log_odds": 0.217239103233799,
+      "mean_signed_allocation_log_odds": 0.022311428742163325,
+      "mean_absolute_gene_mass_log_odds": 1.1988574868862172,
+      "mean_cancellation_fraction": 0.8208446483657411,
+      "top_driver_gene_id": "84874",
+      "top_driver_mass_share": 0.01659861683068504,
+      "top5_driver_mass_share": 0.054738664584388586
+    },
+    {
+      "rank": 2,
+      "group": "REACTOME_POST_TRANSLATIONAL_PROTEIN_MODIFICATION",
+      "measured_gene_count": 1353,
+      "mean_absolute_signed_allocation_log_odds": 0.051145191874660496,
+      "mean_signed_allocation_log_odds": 0.0036690819558878726,
+      "mean_absolute_gene_mass_log_odds": 0.6602070079866202,
+      "mean_cancellation_fraction": 0.9237764479337897,
+      "top_driver_gene_id": "140825",
+      "top_driver_mass_share": 0.008187699640050486,
+      "top5_driver_mass_share": 0.03655073617641234
+    },
+    {
+      "rank": 3,
+      "group": "REACTOME_INNATE_IMMUNE_SYSTEM",
+      "measured_gene_count": 953,
+      "mean_absolute_signed_allocation_log_odds": 0.037839805714349264,
+      "mean_signed_allocation_log_odds": 0.0009103779609279563,
+      "mean_absolute_gene_mass_log_odds": 0.3886573358367975,
+      "mean_cancellation_fraction": 0.8989359160473543,
+      "top_driver_gene_id": "6036",
+      "top_driver_mass_share": 0.018581551628359262,
+      "top5_driver_mass_share": 0.07318151213620475
+    },
+    {
+      "rank": 4,
+      "group": "WP_FATTY_ACID_AND_LIPOPROTEIN_TRANSPORT_IN_HEPATOCYTES",
+      "measured_gene_count": 355,
+      "mean_absolute_signed_allocation_log_odds": 0.03727501078010949,
+      "mean_signed_allocation_log_odds": -0.0004270645293882682,
+      "mean_absolute_gene_mass_log_odds": 0.28850305748458355,
+      "mean_cancellation_fraction": 0.8692660763106557,
+      "top_driver_gene_id": "283316",
+      "top_driver_mass_share": 0.04482051682067276,
+      "top5_driver_mass_share": 0.16557825010060148
+    },
+    {
+      "rank": 5,
+      "group": "REACTOME_METABOLISM_OF_RNA",
+      "measured_gene_count": 668,
+      "mean_absolute_signed_allocation_log_odds": 0.03667988407085659,
+      "mean_signed_allocation_log_odds": 0.0008398375126499854,
+      "mean_absolute_gene_mass_log_odds": 0.3583808138631983,
+      "mean_cancellation_fraction": 0.8905919878166241,
+      "top_driver_gene_id": "23481",
+      "top_driver_mass_share": 0.0182485855990787,
+      "top5_driver_mass_share": 0.07244441005948468
+    },
+    {
+      "rank": 6,
+      "group": "REACTOME_ADAPTIVE_IMMUNE_SYSTEM",
+      "measured_gene_count": 814,
+      "mean_absolute_signed_allocation_log_odds": 0.032649748710176174,
+      "mean_signed_allocation_log_odds": 0.0007848954006045937,
+      "mean_absolute_gene_mass_log_odds": 0.3229997915187804,
+      "mean_cancellation_fraction": 0.8937620221971493,
+      "top_driver_gene_id": "10871",
+      "top_driver_mass_share": 0.01782227971098639,
+      "top5_driver_mass_share": 0.07840602011879733
+    },
+    {
+      "rank": 7,
+      "group": "REACTOME_NEUTROPHIL_DEGRANULATION",
+      "measured_gene_count": 444,
+      "mean_absolute_signed_allocation_log_odds": 0.031163130966170682,
+      "mean_signed_allocation_log_odds": 0.0014106906808640442,
+      "mean_absolute_gene_mass_log_odds": 0.2421222378143599,
+      "mean_cancellation_fraction": 0.8680757730915099,
+      "top_driver_gene_id": "6036",
+      "top_driver_mass_share": 0.029827315395660452,
+      "top5_driver_mass_share": 0.10849155039223891
+    },
+    {
+      "rank": 8,
+      "group": "WP_CILIOPATHIES",
+      "measured_gene_count": 175,
+      "mean_absolute_signed_allocation_log_odds": 0.03073259399280859,
+      "mean_signed_allocation_log_odds": -0.0017846726726430842,
+      "mean_absolute_gene_mass_log_odds": 0.21905262350402416,
+      "mean_cancellation_fraction": 0.8580489470640519,
+      "top_driver_gene_id": "219844",
+      "top_driver_mass_share": 0.041582975461875275,
+      "top5_driver_mass_share": 0.19662251889774562
+    },
+    {
+      "rank": 9,
+      "group": "REACTOME_KERATINIZATION",
+      "measured_gene_count": 118,
+      "mean_absolute_signed_allocation_log_odds": 0.029496034922189416,
+      "mean_signed_allocation_log_odds": 0.0033303475169236484,
+      "mean_absolute_gene_mass_log_odds": 0.17698732413314297,
+      "mean_cancellation_fraction": 0.844517607598202,
+      "top_driver_gene_id": "83897",
+      "top_driver_mass_share": 0.03087681499419484,
+      "top5_driver_mass_share": 0.14310439347739626
+    },
+    {
+      "rank": 10,
+      "group": "WP_GPCRS_CLASS_A_RHODOPSINLIKE",
+      "measured_gene_count": 241,
+      "mean_absolute_signed_allocation_log_odds": 0.029423001178790497,
+      "mean_signed_allocation_log_odds": 0.0018124825278671495,
+      "mean_absolute_gene_mass_log_odds": 0.1754822604986227,
+      "mean_cancellation_fraction": 0.8489377776175037,
+      "top_driver_gene_id": "2842",
+      "top_driver_mass_share": 0.06807484644097056,
+      "top5_driver_mass_share": 0.2046852731861938
+    }
+  ],
+  "records_explained": 261
+}

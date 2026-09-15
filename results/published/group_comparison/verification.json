@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "records": 261,
+  "genes": 17263,
+  "variants": [
+    {
+      "collection": "hallmark",
+      "rule": "primary",
+      "groups": 50,
+      "reconstruction_error": 1.0302869668521453e-13,
+      "random_draws_independently_recomputed": [
+        0,
+        49,
+        99
+      ]
+    },
+    {
+      "collection": "hallmark",
+      "rule": "size_15_500",
+      "groups": 50,
+      "reconstruction_error": 1.0302869668521453e-13,
+      "random_draws_independently_recomputed": [
+        0,
+        49,
+        99
+      ]
+    },
+    {
+      "collection": "reactome",
+      "rule": "primary",
+      "groups": 1839,
+      "reconstruction_error": 1.1013412404281553e-13,
+      "random_draws_independently_recomputed": [
+        0,
+        49,
+        99
+      ]
+    },
+    {
+      "collection": "reactome",
+      "rule": "size_15_500",
+      "groups": 1153,
+      "reconstruction_error": 1.2079226507921703e-13,
+      "random_draws_independently_recomputed": [
+        0,
+        49,
+        99
+      ]
+    },
+    {
+      "collection": "canonical",
+      "rule": "primary",
+      "groups": 4114,
+      "reconstruction_error": 8.526512829121202e-14,
+      "random_draws_independently_recomputed": [
+        0,
+        49,
+        99
+      ]
+    },
+    {
+      "collection": "canonical",
+      "rule": "size_15_500",
+      "groups": 2531,
+      "reconstruction_error": 9.414691248821327e-14,
+      "random_draws_independently_recomputed": [
+        0,
+        49,
+        99
+      ]
+    },
+    {
+      "collection": "go_bp",
+      "rule": "primary",
+      "groups": 7535,
+      "reconstruction_error": 9.059419880941277e-14,
+      "random_draws_independently_recomputed": [
+        0,
+        49,
+        99
+      ]
+    },
+    {
+      "collection": "go_bp",
+      "rule": "size_15_500",
+      "groups": 3993,
+      "reconstruction_error": 9.059419880941277e-14,
+      "random_draws_independently_recomputed": [
+        0,
+        49,
+        99
+      ]
+    }
+  ],
+  "max_reconstruction_error": 1.2079226507921703e-13,
+  "input_hashes_unchanged": true,
+  "models_refitted": false,
+  "prepared_data_access": false,
+  "test_data_access": false,
+  "verifier_sha256": "d66f00c00a3aa8313ef412e80363b5d10a5b9fbb5c3a85373c5a728e1b840940"
+}

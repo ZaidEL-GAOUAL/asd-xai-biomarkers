@@ -1,86 +1,130 @@
-# Pipeline scripts
+# Running the pipeline
 
-Numbered execution order, runtimes, and I/O for the full pipeline (v3 structure: gene-level track + pathway-level track + unified external validation).
+## Review without downloading data
 
-## Dependency graph
+The four notebooks under `scripts/notebooks/` display included aggregate results.
+They do not access source expression, diagnosis tables, models or the historical
+test partition. The stored figures and tables are sufficient to follow the findings.
 
-```
-00 (base preprocessing)
- └── 01 (ComBat on GSE18123)
-      ╔═══════════ GENE-LEVEL TRACK (primary) ═══════════╗
-      ├── 02 (gene-level stability + leakage-safe performance)
-      ├── 03 (gene LR+RF multi-XAI consensus)
-      ├── 04 (gene permutation null tests)
-      ├── 05 (gene multi-seed robustness, 30 runs)
-      ╚══════════════════════════════════════════════════╝
-      ╔═══════════ PATHWAY-LEVEL TRACK (secondary) ═══════╗
-      ├── 06 (ssGSEA + stability + XAI + null + multi-seed on pathways)
-      ╚══════════════════════════════════════════════════╝
-      ╔═══════════ VALIDATION + INTERPRETATION ═══════════╗
-      ├── 07 (unified: gene + pathway signatures tested on GSE25507, GSE42133, GSE6575)
-      └── 08 (SFARI annotation of gene + pathway-member signatures)
-      ╚══════════════════════════════════════════════════╝
-```
-
-Scripts 02-05 (gene track) and 06 (pathway track) depend only on the ComBat parquet produced by 01; they can be run in parallel after 01 completes. Script 07 depends on 03, 05, 06 outputs (uses their signatures). Script 08 depends on 05 and 06 outputs.
-
-Sensitivity-check scripts at `scripts/appendix/` (age-only residualization control, no-residualization control) are not part of the main pipeline; they can be run optionally to validate robustness of the discovery gene signature to residualization-config choices.
-
-## I/O and runtime
-
-| # | Script | Inputs | Outputs | Runtime |
-|---|--------|--------|---------|---------|
-| 00 | `00_base_preprocessing.py` | GEO (GSE18123) | `data/processed/GSE18123_commonGenes_2platforms.parquet` | 2 min (idempotent; `FORCE=1` re-downloads) |
-| 01 | `01_combat_with_mod_diagnosis.py` | base parquet | `results/processed/GSE18123_combat_corrected.parquet`, PCA figures | <1 min |
-| 02 | `02_stability_selection.py` | ComBat parquet | `results/tables/signature_stability_combat.csv`, `gene_stability_k{50,80,100,150}.csv`, `gene_stability_k_sensitivity_summary.csv`, `staged_performance_*_infold.csv`, figure | <1 min |
-| 03 | `03_lr_vs_rf_xai_consensus.py` | ComBat parquet | `results/tables/lr_vs_rf_consensus.csv`, `signature_stability_combat.csv`, figure | ~3 min |
-| 04 | `04_permutation_null.py` | ComBat parquet | `results/tables/permutation_null_*.csv`, figure | ~25 min |
-| 05 | `05_multiseed_robustness.py` | ComBat parquet | `results/tables/multiseed_*.csv`, figures | ~18 min |
-| 06 | `06_pathway_analysis.py` | ComBat parquet, bundled GMTs | `results/processed/GSE18123_pathway_scores.parquet`, `results/tables/pathway_stability.csv`, `pathway_multiseed_frequency.csv`, `pathway_null_summary.csv`, figure | ~10 min |
-| 07 | `07_external_validation.py` | ComBat parquet, pathway signature, GSE25507/42133/6575 GEO, bundled GMTs | `results/processed/four_cohort_combat.parquet`, `four_cohort_pathway_scores.parquet`, `results/tables/gene_external_validation.csv`, `pathway_external_validation.csv`, `pathway_signature_overlap.csv`, figure | ~3 min (cached ssGSEA) / ~30 min (fresh) |
-| 08 | `08_biological_annotation.py` | SFARI CSV, bundled GMTs, gene + pathway multi-seed CSVs | `results/tables/gene_signature_sfari.csv`, `pathway_sfari_members.csv`, `pathway_sfari_summary.csv` | <1 s |
-
-## Running a single script
-
-Scripts resolve all paths relative to the repo root, so they can be run from any working directory:
+For a rerun, use Python 3.13 with the recorded package versions:
 
 ```bash
-python scripts/pipeline/01_combat_with_mod_diagnosis.py
-# or
-cd /tmp && python /abs/path/to/scripts/pipeline/01_combat_with_mod_diagnosis.py
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 ```
 
-Script 00 is idempotent: it skips regeneration if `data/processed/GSE18123_commonGenes_2platforms.parquet` already exists. Set `FORCE=1` to re-download and reprocess from raw GEO data.
+Software test suites and administrative release tools are not bundled in this
+pipeline-only copy. They remain in the complete working package.
+The completed study's numerical-verification reports remain historical evidence
+under `results/published/`.
 
-Script 06 caches its ssGSEA output at `results/processed/GSE18123_pathway_scores.parquet`. Script 07 caches its 4-cohort ssGSEA output at `results/processed/four_cohort_pathway_scores.parquet`. Delete those files to force recomputation.
+The single root `requirements.txt` specifies the recorded analysis environment.
 
-## Required packages
+## Full rerun from public sources
 
-- `pandas`, `numpy`, `scipy`, `statsmodels`, `scikit-learn`, `imbalanced-learn`, `matplotlib`
-- `inmoose` — `pycombat_norm` (ComBat batch correction)
-- `shap` — `LinearExplainer` (LR) and `TreeExplainer` (RF)
-- `GEOparse` — fetching GSE18123, GSE25507, GSE42133, GSE6575
-- `gseapy` — `ssgsea` (pathway activation scoring) with local KEGG + Reactome GMT files
-- `lime` — legacy (only used by appendix scripts; main pipeline dropped LIME in favor of 6-method consensus)
-- `CovariateResidualizer` class in `../../src/residualize.py`
+Run the following stages in order from the repository root unless stated otherwise.
+This is a deliberate computational rerun, not required to open the notebooks.
+It was not repeated during release preparation. Historical results can be compared
+with a rerun, but compressed-file timestamps and run metadata can change byte hashes.
 
-## Script-by-script summary
+### 1 Source metadata and raw arrays
 
-1. **00** Load GSE18123 from GEO, map probes to gene symbols for both platforms (GPL570 direct, GPL6244 via `gene_assignment` parsing), intersect to common genes, log2-transform, save parquet.
-2. **01** ComBat batch correction with `mod=diagnosis` preserving biological variance. Before/after PCA by platform and by diagnosis.
-3. **02** Gene-level stability selection + k-sensitivity sweep (v2 Step 5 + v2 Step 9) + leakage-safety demo. Section A runs SelectKBest stability ranking at k=100 (primary, feeds downstream scripts via `signature_stability_combat.csv`). Section B sweeps k ∈ {50, 80, 100, 150} and computes pairwise + all-way top-25 overlap. Section C reproduces the in-fold-vs-outside-fold leakage-safety comparison from old script 02.
-4. **03** Gene-level cross-model XAI consensus: LR with (PFI, SHAP, Coef) and RF with (PFI, TreeSHAP, Impurity). 5/6 and 6/6 consensus voting. Produces the GSE18123 signature `signature_stability_combat.csv` + 4-gene consensus.
-5. **04** 500 permutations of the stability pipeline (reveals that stability-count alone is not null-supported on p-greater-than-n data), then 50 permutations of the cross-model XAI consensus (shows 5/6 majority consensus is null-resistant; 6/6 strict is more borderline).
-6. **05** Gene-level 30-run robustness (10 seeds × {200, 500, 1000} trees) on GSE18123. Produces per-gene inclusion frequency table.
-7. **06** Pathway-level track: ssGSEA converts 285 × 17,707 gene matrix to 285 × ~2000 pathway matrix (KEGG_2021_Human + Reactome_2022 bundled in `data/reference/gene_sets/`). Then applies the gene-level v2-style pipeline to pathways: stability ranking, cross-model XAI consensus (6 methods), quick null test (50 perms), multi-seed robustness (5 seeds × 2 tree counts). Produces 6-pathway multi-seed signature at freq_5of6 ≥ 80%.
-8. **07** Unified external validation: joint 4-cohort ComBat (GSE18123 + GSE25507 + GSE42133 + GSE6575), joint ssGSEA on the full 625-sample matrix, model transfer of both the 4-gene gene signature and the 6-pathway signature from GSE18123 to each external cohort via SMOTE + LR + RF, cohort-specific pathway ranking overlap with the discovery signature. Produces side-by-side bar chart comparing gene-level vs pathway-level transfer performance.
-9. **08** Biological annotation: SFARI Q4 2025 snapshot cross-referenced against (a) each gene in the gene signature and (b) each member gene of each pathway in the pathway signature. Fisher's exact test of SFARI enrichment per pathway, with BH correction. Identifies which pathways contain canonical ASD genes.
+Obtain the three series-matrix files for GSE18123/GPL570, GSE18123/GPL6244 and
+GSE6575/GPL570, plus the **GEO annotation** files for GPL570 and GPL6244. Do not
+substitute the much larger platform-family SOFT downloads: these are different files.
+Expected names, source links and decompressed SHA256 values are recorded in
+`data/source_manifest.json`. Place them in `data/whole_blood/source/` under those names.
 
-## Known methodological choices
+```bash
+python scripts/pipeline/00_download_data.py --download
+```
 
-- SHAP background set is `X_test` for all XAI runs (standard practice uses a training sample; ranking is not materially affected).
-- `pd.get_dummies(drop_first=True)` in `CovariateResidualizer._design_matrix` could fail with extremely unbalanced folds; on GSE18123 class balance this does not occur in practice.
-- `build_platform_matrix` in `asd_pipeline_utils.py` handles GPL570 and GPL6244. GPL10558 (Illumina) is handled inline in script 07 since it is only used once.
-- All RF calls are seeded via the loop variable, so changing `SEEDS` in scripts 05, 06, 07 produces a different but reproducible robustness picture.
-- Gene sets (KEGG_2021_Human, Reactome_2022) are bundled as local GMT files in `data/reference/gene_sets/` to avoid runtime dependency on Enrichr's download API (gseapy 1.1.13 has a download bug on Python 3.13).
-- v2 Step 9 (k-sensitivity sweep at k ∈ {50, 80, 100, 150}) **restored** in script 02. Measured on GSE18123: 18 of top-25 genes (72%) are shared across all 4 k values — stability ranking is k-robust. Pairwise top-25 overlaps range from 72% (k=50 vs k=150) to 96% (k=80 vs k=100).
+The preflight stops on a missing or changed metadata source. The program then
+constructs the acquisition manifest and grouped partition and retrieves its
+referenced CEL arrays. Source diagnoses and eligibility rules are defined in
+the code. Do not replace the recorded metadata with an unverified newer snapshot.
+
+### 2 Normalization and preparation
+
+Use an isolated R 4.5 / Bioconductor 3.22 environment. Review the installer before
+running it; package installation and raw-array processing can take substantial time.
+
+```bash
+Rscript src/install_r_preparation.R
+Rscript scripts/pipeline/01_normalize_arrays.R GPL570
+Rscript scripts/pipeline/01_normalize_arrays.R GPL6244
+python scripts/pipeline/02_prepare_data.py
+```
+
+The scripts preserve the grouped partition, perform per-array frozen RMA,
+match Entrez genes and apply the recorded QC policy. Preparation necessarily
+creates training and test matrices; the later active analyses read development
+inputs only. The globally prepared/scaled matrix is not used as a substitute for
+the fold-fitted transformations in model training.
+
+### 3 Biological references
+
+```bash
+python scripts/pipeline/03_download_references.py
+```
+
+This retrieves the four versioned MSigDB GMT files only and verifies their exact
+hashes. Reference licenses remain those of the providers. It sends no project data.
+For the optional SFARI context, obtain the frozen 2026 Q2 human-gene download and
+follow `data/reference/sfari/source_manifest.json`: project its recorded
+columns to `human_genes.csv`, preserving order and missing values. The source
+manifest contains raw and projected hashes. A current, different SFARI release
+is not an exact reproduction and must be documented separately.
+
+### 4 Classification and gene explanations
+
+```bash
+python scripts/pipeline/04_train_models.py --jobs 2
+python scripts/tools/verify_training.py
+python scripts/pipeline/05_gene_explanations.py --sfari-csv data/reference/sfari/human_genes.csv
+```
+
+If the frozen SFARI file is unavailable, omit `--sfari-csv`; this omits the
+descriptive SFARI annotation, not the gene SHAP calculation. Record that deviation
+when comparing outputs. Model search uses 54 settings with fold-fitted preprocessing.
+No SMOTE, new feature search, threshold optimization or test reevaluation is included.
+
+### 5 Biological-group comparison
+
+From the repository root:
+
+```bash
+python scripts/pipeline/06_gene_set_coverage.py
+python scripts/pipeline/07_compare_explanations.py
+python scripts/tools/verify_collections.py
+python scripts/tools/plot_collections.py
+```
+
+These commands use the newly generated development inputs/explanations, not the
+published aggregate summaries. Existing analysis destinations are never overwritten
+by the model/XAI commands. Use a new working copy for a full rerun rather than mixing
+new outputs with partial old results. The original protocol expects the original
+gene universe and record counts and deliberately fails if they differ.
+
+Fresh outputs are written to `results/model_comparison/`,
+`results/gene_pathway_explanations/`, `results/pathway_coverage/` and
+`results/group_comparison/`. The distributed aggregate results remain separate
+under `results/published/`. Their historical provenance names the paths and
+source hashes used before the folder reorganization. A complete fresh run
+generates its own provenance; the verification tools target fresh outputs.
+
+To refresh only the four review notebooks from the unchanged saved aggregates:
+
+```bash
+python scripts/tools/build_review_notebooks.py --execute
+```
+
+This command does not download data or train models.
+
+## Reporting boundaries
+
+The shared cohorts come from two GEO series, not three independent studies.
+The 66-record test partition has already been examined historically. Nested
+development evaluation does not erase earlier exploration. Reproduction confirms
+implementation consistency, not clinical validity or biological causation.

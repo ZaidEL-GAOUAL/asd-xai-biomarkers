@@ -1,0 +1,29 @@
+{
+  "samples": 327,
+  "ASD": 204,
+  "Control": 123,
+  "unique_title_stem_groups": 302,
+  "common_genes": 17263,
+  "prepared_genes": 17263,
+  "train_samples": 261,
+  "test_samples": 66,
+  "intake_records_before_QC": 331,
+  "quality_excluded_records": 4,
+  "retained_GPL570_GNUSE_passes": 142,
+  "retained_GPL6244_GNUSE_not_assessed": 185,
+  "gnuse_missing": 185,
+  "training_pca_explained_variance": {
+    "Before cohort-mean adjustment": [
+      0.623424495819633,
+      0.08849660731811959
+    ],
+    "After cohort-mean adjustment": [
+      0.241643352273348,
+      0.06752021806784608
+    ]
+  },
+  "checks_passed": 19,
+  "no_classifiers_trained": true,
+  "not_external_validation": true,
+  "no_synthetic_samples": true
+}

@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "created_at_utc": "2026-09-08T15:14:31.048230+00:00",
+  "analysis": "identifier-only comparison of preselected Reactome and existing Hallmark",
+  "python_version": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "source_and_dictionary_sha256": {
+    "phase2_outputs/gene_dictionary.csv": "1947698234f6e4c0a0587c470af50b9f7a0c956736dc7c08c7fbceab2f643ceb",
+    "data/pathways/msigdb_2026.1.Hs/source_manifest.json": "75b1d6d7bbbaf678f117453e55500a01aacfcf2746627c63d80fe24d0ff935e0",
+    "research/references/reactome/msigdb_2026.1.Hs/source_manifest.json": "8e2bf5ce6fee28053a2b90d3d7a6fef3019f5c9543b5273f3c0f6537d118cbbd",
+    "research/src/asd_blood/pathways.py": "a2253dd74dcb428f5dae49748d92d50679bb28c183831a97e1e9f5197f387fc3",
+    "data/pathways/msigdb_2026.1.Hs/h.all.v2026.1.Hs.entrez.gmt": "7b3c4de012b2a3aa8f90e5452c21fc8c116a31c30dd98ec00253816152ac9072",
+    "research/references/reactome/msigdb_2026.1.Hs/c2.cp.reactome.v2026.1.Hs.entrez.gmt": "b2fcb2f6c81a598df5a645333f7ecf52c7a07b782dc39b30ff390d431dc20695"
+  },
+  "training_header_sha256": "33fbfaff54b0dc8da41aa3acbc2409087f602d74d2c0a6adcb6ecb17a9b1551f",
+  "input_files_opened": [
+    "X_train_log2.csv.gz",
+    "gene_dictionary.csv"
+  ],
+  "expression_rows_parsed": false,
+  "diagnosis_labels_read": false,
+  "test_files_opened": false,
+  "models_fitted": false,
+  "explanations_recalculated": false,
+  "mapping": "Exact Entrez ID intersection; no symbol or obsolete-ID rescue; absent members not filled with zeros",
+  "pathway_filters_applied": null,
+  "small_set_counts": "Descriptive only; fewer than five matches is not a medical cutoff",
+  "completed_at_utc": "2026-09-08T15:14:31.076343+00:00",
+  "source_and_dictionary_unchanged": true
+}

@@ -1,0 +1,280 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-09-08T12:21:39.432764+00:00",
+  "scope": "Read-only reconstruction from approved training inputs; no fitting or test-data access",
+  "outer_models_reconstructed": 15,
+  "final_model_bundles_checked": 3,
+  "predictions_reconstructed": 783,
+  "unique_training_records": 261,
+  "unique_candidate_settings": 54,
+  "candidate_summary_rows_checked": 324,
+  "candidate_fold_rows_checked": 1350,
+  "bootstrap_repetitions_per_model": 1000,
+  "maximum_probability_absolute_error": 1.1102230246251565e-16,
+  "absolute_and_relative_tolerance": 1e-11,
+  "csv_roundoff_selection_ties": [],
+  "accessed_training_files": [
+    "X_train_log2.csv.gz",
+    "gene_dictionary.csv",
+    "metadata_train.csv",
+    "y_train.csv"
+  ],
+  "input_sha256": {
+    "X_train_log2.csv.gz": "3bda583993a522f8932ad64d0360a65468ed3fb657b915244131fd6a3808c02b",
+    "y_train.csv": "c13a52bd8ba757f5e2fed7b30455a7a7fafc25b6ca94bd5709c632cef53b857b",
+    "metadata_train.csv": "a441437d8354f8100a68ac56d2af952a622fcd386b65e8c43438904d998ab69c",
+    "gene_dictionary.csv": "1947698234f6e4c0a0587c470af50b9f7a0c956736dc7c08c7fbceab2f643ceb"
+  },
+  "source_snapshot_sha256": {
+    "common.py": "4f44e1bc6750614bcdbd88726a5c084623eb4f8d4c02cc9d5e8f6234f1b0a35e",
+    "training.py": "590fe3c6bbe5d2738bca5ed1c0528baf5ad64797fad15c72240a5ae8faa7c559"
+  },
+  "verified_output_sha256": {
+    "cohort_metrics.csv": "6cbe6c164a163575521c571b49e9ae8b266538cd4813a432beda8f4778f72d58",
+    "confusion_matrices.png": "a17f8fb5561d145c206cbcb7b2e8771171984260c468ffa269f9d399c607ceeb",
+    "model_comparison.csv": "97cbef9512c37dc20275229836d0b813d36b8d54d27fed983141bb6b2ee502bb",
+    "models/knn.joblib": "38c9ef4c9864e75a88fe2bd6fa52a29059c5db62b6fbd79cb3a4ffe22b8e1e89",
+    "models/logistic_regression.joblib": "7cb2c11af8dd994912023dc8c4067cd8eb3d1e034e6ce29ec12e8cd8e35ae0a2",
+    "models/random_forest.joblib": "96a424d6866eb03eb48f976f5aa4c779dec60220d37476bd67df3f36ab946bfc",
+    "out_of_fold_predictions.csv": "21e35872190e0f1ea348082df36a8e46859ca85e7eb9d85da75c9d208d1e3382",
+    "outer_fold_metrics.csv": "4ebd86ca8de610ccc550ee1606a32e0972f5c9db14d55038d61236cd1cc04680",
+    "outer_models/fold_0_knn.joblib": "adf6a82cfa7638981c7da9fa83e37d0255c4d1ec82e881157252755f1a231c59",
+    "outer_models/fold_0_logistic_regression.joblib": "b9f4e2598f46ff253d49e4a0ef372566dd58698a791665cfde289305faef3b68",
+    "outer_models/fold_0_random_forest.joblib": "65561975a4e10c7baca920300740b8dd0731cb0c300f1b33397ac385c73e1584",
+    "outer_models/fold_1_knn.joblib": "ba0b5f623c271c2bcce3cdce4125839b760645ce1e097c0c001e1970d16d2b41",
+    "outer_models/fold_1_logistic_regression.joblib": "c2eeaa1837cfd8d9226de964d1869f2b3f01a6872b7e785bd0004c4a46b042c0",
+    "outer_models/fold_1_random_forest.joblib": "62d7a39d1f859432b77abb4462e3b86f72389841b06191bb93b7f2542f4cfc07",
+    "outer_models/fold_2_knn.joblib": "07c0b2dfeba8f48659936a5e9b37f699167dd92849f0056ec730086c11650799",
+    "outer_models/fold_2_logistic_regression.joblib": "9d50182e0603583f5c418d90ea5fe29a0f25cb8902faab3d2b1eb1ec3e13a944",
+    "outer_models/fold_2_random_forest.joblib": "d16f9272aa47aa1a0dd4fa5cdfd2cfb77cb58a96a31debd1f55af7b0dd25c1c5",
+    "outer_models/fold_3_knn.joblib": "11093eec8807318aac4b8c39d1d9391c90401dfad5a4c6258da2799593b34e42",
+    "outer_models/fold_3_logistic_regression.joblib": "bd3e5d3e3bd4155dd2c2c24cc12876c630365f8c3fe3be57ed876fb8f998377e",
+    "outer_models/fold_3_random_forest.joblib": "cd901c11f3c54c8dcdd04d1668e0fd663dd443bdc12ccb2094c1bb50b6fbdff8",
+    "outer_models/fold_4_knn.joblib": "e0da13ebe22f743fd8d2afe7687076ad126a2976ca93d88aeb475cb1055bc55d",
+    "outer_models/fold_4_logistic_regression.joblib": "884322add754efdfe779612ba34e078ff9da3b1097c0a5061e2888b8857af0f9",
+    "outer_models/fold_4_random_forest.joblib": "5c378be9693be6f5e23f0aace91c591fb674358610ea7e8af0eea7fdfef4bdb1",
+    "protocol.json": "d01cc6cb4e75f9ddced93ae1fa64722ccd30ff078f0d3a8cbdb6fd48ddea8c7f",
+    "searches/full_training_knn_candidates.csv": "8e7e6461d3eae2bde95eb5404dd46e38020991e212bd231d16ee2a52bfc32cb8",
+    "searches/full_training_knn_fold_scores.csv": "44ffa9314115c17cc7069c54231fb7ff6c7cf42829f745e782b13d7153bbfe58",
+    "searches/full_training_logistic_regression_candidates.csv": "530eea4e004eefc0f7a4bb452829131eabc1ae544b291c4b473d3b6913b4de1f",
+    "searches/full_training_logistic_regression_fold_scores.csv": "7fc0a0dcd5eec350b8c75fa06307e1df897e3e574218a19725f5f294f890a94f",
+    "searches/full_training_random_forest_candidates.csv": "6decff1338d11414ca76d6ed0c3aa7167ebc86228282d1459491b38589077cb5",
+    "searches/full_training_random_forest_fold_scores.csv": "281b36b18258a89142e615185f402f7353ba8311dfb8c6aa3fe2df31ee0f8b14",
+    "searches/outer_0_knn_candidates.csv": "4491d8c634faf7f1e6d2e7b8e340e33b5efe175266841146a85a37264fcbcc50",
+    "searches/outer_0_knn_fold_scores.csv": "0c8da2b37ae1f8702267e7a51bc633770a910d5f9cce9035e4bd45e5b08bd303",
+    "searches/outer_0_logistic_regression_candidates.csv": "e8c28fcf45f3b57a6054d4c7b20ec91fe1f7128b18e234e940159e1f480469b9",
+    "searches/outer_0_logistic_regression_fold_scores.csv": "584171139e9d16686e7078f23e0b1be368449a8495efb5a3f2ade9925849869e",
+    "searches/outer_0_random_forest_candidates.csv": "5c43670accb3ed49dd931f851cae21aee45361ddedc084f1486ea9a0d106a1c6",
+    "searches/outer_0_random_forest_fold_scores.csv": "f2c62aecbe8e6f530f5c1a41a797ec3c940e60f5aab9b2858a5a9f6381c0d099",
+    "searches/outer_1_knn_candidates.csv": "d5b514a4241fc5abc513333747b42f4a9cc916a1ac75a71c58abb896f3e6d35c",
+    "searches/outer_1_knn_fold_scores.csv": "b66483e4ffddd5e67752ca27f0394afe2a602650f2b0b8c47c73fa9d6590a4fd",
+    "searches/outer_1_logistic_regression_candidates.csv": "72fbc5d9cb5d5aae0bc1ce15bd9fc5920b43d293b8b9f23b2e7fcb9e8336789a",
+    "searches/outer_1_logistic_regression_fold_scores.csv": "c38f06e1448b7f07f1a8e46e938c24dbc0c2e83d3e7a2d22ad4c5af82207e453",
+    "searches/outer_1_random_forest_candidates.csv": "4c4818e5ac5e0cf1f0ed87a6ad82c65d243bff81d10fed42b6b8201dd8185563",
+    "searches/outer_1_random_forest_fold_scores.csv": "05ef4d662b70cc10a24914a0914a66877818e36eb952ce57009e184a531b9c4b",
+    "searches/outer_2_knn_candidates.csv": "ef927c0fc1f933d945d3ec22920b0fbbc1cc8870d01954e82b426bf365ed0ebf",
+    "searches/outer_2_knn_fold_scores.csv": "07719f46369259d866cfd8401adaf0ed1f7d173e5cfd076aa0ac57eebc17963c",
+    "searches/outer_2_logistic_regression_candidates.csv": "6c3b922f7a835b0ccd101eeecea1efc55c991bcf9e841847bf9b4eada9a670e7",
+    "searches/outer_2_logistic_regression_fold_scores.csv": "cdee1a45b26a88435cf1254f0d20f18dcfe071526419cfa38d42a32631b98325",
+    "searches/outer_2_random_forest_candidates.csv": "4640ec541c7d3636fe715509584afb34af60325dda82e8303aa8bfd5a3b86ac4",
+    "searches/outer_2_random_forest_fold_scores.csv": "864dc183ed55545aa25092bcd7f9436b2a503c7d868eaa6fdf6210514b183b41",
+    "searches/outer_3_knn_candidates.csv": "0fb3442637b9b820a59a75d7e6d0db96c07cd1e75645537e63c884d4cab28320",
+    "searches/outer_3_knn_fold_scores.csv": "7b7e8c75816b4030a962d1e83a6fb005bab3980f70e928b962dd11c302888009",
+    "searches/outer_3_logistic_regression_candidates.csv": "cceafac0cc50888c9604aab4a4455b3ca3a793a83c0a96bcc21921502bbf0145",
+    "searches/outer_3_logistic_regression_fold_scores.csv": "22b1a12859ec7e86e8b7c307cb76511957173caa34d0867c6f697eb5fb32b78e",
+    "searches/outer_3_random_forest_candidates.csv": "b71a544b5f35c51cfc9eeff834a63106cbd2831eca90664767a1daf04dae5e00",
+    "searches/outer_3_random_forest_fold_scores.csv": "bae22fb2e21256bf94a192ed8447f15c9ddb905a64ffd18ea99f9dcb844b4bd4",
+    "searches/outer_4_knn_candidates.csv": "c7bd2956084fa44571ac376dc7d491f6f392fd480845c2f85fba7388e51f2bd3",
+    "searches/outer_4_knn_fold_scores.csv": "8784f7a2710cadb0d89da2767aa832d2fc6bda60a57d49da1b0056a61ae79e1a",
+    "searches/outer_4_logistic_regression_candidates.csv": "0794cce24652379355415c3b87f65de3ea7a956db74f056c446e9cc5187501e8",
+    "searches/outer_4_logistic_regression_fold_scores.csv": "41c8c195188c51cddba60d5601fd8a7cee1052511bb49b3692f7ce18ba81dc42",
+    "searches/outer_4_random_forest_candidates.csv": "c87a4091d71744362e3e78c764d125ed18c26d600eade8f0092fa809df7bc50b",
+    "searches/outer_4_random_forest_fold_scores.csv": "0528aa46ff052008b07a05e2be01b6ce3b38c0691056580bef3b3955a52f99d3",
+    "selected_parameters.json": "a54d6cac3e3f069d4311a77afe0aee90c34f5059aeef67624d49e155f52a8174",
+    "selection_history.json": "aedfd856c22c10cd0dcea8463d051437d72fe038e6a21f3784731c00de93717f",
+    "source/common.py": "4f44e1bc6750614bcdbd88726a5c084623eb4f8d4c02cc9d5e8f6234f1b0a35e",
+    "source/training.py": "590fe3c6bbe5d2738bca5ed1c0528baf5ad64797fad15c72240a5ae8faa7c559",
+    "summary.json": "5d24a98c0788c1fa1c264b1209a30908f3c2faf6459ae9797a696af1a7a504a5",
+    "training_folds.csv": "81334b004988b321beb4d5f8cef98440a0eed2d6870261a1b506a87328d05c3d"
+  },
+  "verification_script_sha256": "9435eacf9fb7f18648db51bb4442057bf4e0ece21af440ffd3725b5c2cc0f1a2",
+  "environment": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.2",
+    "shap": "0.51.0"
+  },
+  "fold_checks": [
+    {
+      "model": "logistic_regression",
+      "fold": 0,
+      "validation_records": 52,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "random_forest",
+      "fold": 0,
+      "validation_records": 52,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "knn",
+      "fold": 0,
+      "validation_records": 52,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "logistic_regression",
+      "fold": 1,
+      "validation_records": 53,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "random_forest",
+      "fold": 1,
+      "validation_records": 53,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "knn",
+      "fold": 1,
+      "validation_records": 53,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "logistic_regression",
+      "fold": 2,
+      "validation_records": 53,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "random_forest",
+      "fold": 2,
+      "validation_records": 53,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "knn",
+      "fold": 2,
+      "validation_records": 53,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "logistic_regression",
+      "fold": 3,
+      "validation_records": 52,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "random_forest",
+      "fold": 3,
+      "validation_records": 52,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "knn",
+      "fold": 3,
+      "validation_records": 52,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "logistic_regression",
+      "fold": 4,
+      "validation_records": 51,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "random_forest",
+      "fold": 4,
+      "validation_records": 51,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    },
+    {
+      "model": "knn",
+      "fold": 4,
+      "validation_records": 51,
+      "prediction_match": true,
+      "training_only_preprocessor_statistics": true,
+      "group_separation": true
+    }
+  ],
+  "pooled_oof_recomputed": {
+    "logistic_regression": {
+      "n": 261,
+      "tn": 72,
+      "fp": 26,
+      "fn": 39,
+      "tp": 124,
+      "accuracy": 0.7509578544061303,
+      "balanced_accuracy": 0.7477150369350194,
+      "sensitivity": 0.7607361963190185,
+      "specificity": 0.7346938775510204,
+      "precision": 0.8266666666666667,
+      "f1": 0.792332268370607,
+      "roc_auc": 0.7957305621635157
+    },
+    "random_forest": {
+      "n": 261,
+      "tn": 27,
+      "fp": 71,
+      "fn": 15,
+      "tp": 148,
+      "accuracy": 0.6704980842911877,
+      "balanced_accuracy": 0.591742832102166,
+      "sensitivity": 0.9079754601226994,
+      "specificity": 0.2755102040816326,
+      "precision": 0.6757990867579908,
+      "f1": 0.774869109947644,
+      "roc_auc": 0.7176349067234256
+    },
+    "knn": {
+      "n": 261,
+      "tn": 31,
+      "fp": 67,
+      "fn": 28,
+      "tp": 135,
+      "accuracy": 0.6360153256704981,
+      "balanced_accuracy": 0.5722736947539753,
+      "sensitivity": 0.8282208588957055,
+      "specificity": 0.3163265306122449,
+      "precision": 0.6683168316831684,
+      "f1": 0.7397260273972602,
+      "roc_auc": 0.6389445348691625
+    }
+  },
+  "limitations": [
+    "Checks stored inner-search ledgers without refitting all 1350 candidate models.",
+    "Does not establish clinical validity, causal interpretation or independent validation.",
+    "Group-bootstrap intervals are conditional on saved predictions, not retraining uncertainty."
+  ]
+}

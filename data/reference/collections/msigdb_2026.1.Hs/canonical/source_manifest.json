@@ -1,0 +1,20 @@
+{
+  "collection": "MSigDB human canonical pathways (C2:CP)",
+  "version": "2026.1.Hs",
+  "organism": "Homo sapiens",
+  "identifier_type": "NCBI Entrez Gene ID",
+  "file": "c2.cp.v2026.1.Hs.entrez.gmt",
+  "source_url": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2026.1.Hs/c2.cp.v2026.1.Hs.entrez.gmt",
+  "release_notes_url": "https://docs.gsea-msigdb.org/MSigDB/Release_Notes/MSigDB_2026.1.Hs/",
+  "retrieved_date_utc": "2026-09-08",
+  "sha256": "67456c318441cecc7c96f3506912db5b7f61165989c09b6bc145029bf2306ac4",
+  "bytes": 1537673,
+  "expected_sets": 4115,
+  "modifications": "None. Official GMT bytes retained unchanged.",
+  "selection": "Preselected broader canonical pathway comparison, irrespective of coverage or XAI results.",
+  "license": "MSigDB CC BY 4.0 with source-specific exceptions; not a blanket license for this combined collection",
+  "terms_url": "https://www.gsea-msigdb.org/gsea/msigdb_license_terms.jsp",
+  "redistribution": "Retained for local research. Review KEGG, BioCarta, PID and other source-specific terms before redistribution; direct readers to official download.",
+  "attribution": "MSigDB: Broad Institute, Massachusetts Institute of Technology, and Regents of the University of California; retain original pathway-source attribution.",
+  "citations": ["10.1073/pnas.0506580102", "10.1093/nar/gkaf1223"]
+}

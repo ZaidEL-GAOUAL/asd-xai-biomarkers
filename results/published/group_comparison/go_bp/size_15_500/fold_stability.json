@@ -1,0 +1,182 @@
+[
+  {
+    "fold_a": 0,
+    "fold_b": 1,
+    "level": "genes_all",
+    "jaccard": 0.14285714285714285
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 1,
+    "level": "genes_covered",
+    "jaccard": 0.14285714285714285
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 1,
+    "level": "pathways",
+    "jaccard": 0.42857142857142855
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 2,
+    "level": "genes_all",
+    "jaccard": 0.05263157894736842
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 2,
+    "level": "genes_covered",
+    "jaccard": 0.08108108108108109
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 2,
+    "level": "pathways",
+    "jaccard": 0.25
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 3,
+    "level": "genes_all",
+    "jaccard": 0.02564102564102564
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 3,
+    "level": "genes_covered",
+    "jaccard": 0.05263157894736842
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 3,
+    "level": "pathways",
+    "jaccard": 0.25
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 4,
+    "level": "genes_all",
+    "jaccard": 0.08108108108108109
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 4,
+    "level": "genes_covered",
+    "jaccard": 0.1111111111111111
+  },
+  {
+    "fold_a": 0,
+    "fold_b": 4,
+    "level": "pathways",
+    "jaccard": 0.42857142857142855
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 2,
+    "level": "genes_all",
+    "jaccard": 0.08108108108108109
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 2,
+    "level": "genes_covered",
+    "jaccard": 0.14285714285714285
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 2,
+    "level": "pathways",
+    "jaccard": 0.6666666666666666
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 3,
+    "level": "genes_all",
+    "jaccard": 0.05263157894736842
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 3,
+    "level": "genes_covered",
+    "jaccard": 0.08108108108108109
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 3,
+    "level": "pathways",
+    "jaccard": 0.25
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 4,
+    "level": "genes_all",
+    "jaccard": 0.02564102564102564
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 4,
+    "level": "genes_covered",
+    "jaccard": 0.02564102564102564
+  },
+  {
+    "fold_a": 1,
+    "fold_b": 4,
+    "level": "pathways",
+    "jaccard": 0.42857142857142855
+  },
+  {
+    "fold_a": 2,
+    "fold_b": 3,
+    "level": "genes_all",
+    "jaccard": 0.08108108108108109
+  },
+  {
+    "fold_a": 2,
+    "fold_b": 3,
+    "level": "genes_covered",
+    "jaccard": 0.08108108108108109
+  },
+  {
+    "fold_a": 2,
+    "fold_b": 3,
+    "level": "pathways",
+    "jaccard": 0.1111111111111111
+  },
+  {
+    "fold_a": 2,
+    "fold_b": 4,
+    "level": "genes_all",
+    "jaccard": 0.05263157894736842
+  },
+  {
+    "fold_a": 2,
+    "fold_b": 4,
+    "level": "genes_covered",
+    "jaccard": 0.05263157894736842
+  },
+  {
+    "fold_a": 2,
+    "fold_b": 4,
+    "level": "pathways",
+    "jaccard": 0.42857142857142855
+  },
+  {
+    "fold_a": 3,
+    "fold_b": 4,
+    "level": "genes_all",
+    "jaccard": 0.05263157894736842
+  },
+  {
+    "fold_a": 3,
+    "fold_b": 4,
+    "level": "genes_covered",
+    "jaccard": 0.08108108108108109
+  },
+  {
+    "fold_a": 3,
+    "fold_b": 4,
+    "level": "pathways",
+    "jaccard": 0.25
+  }
+]

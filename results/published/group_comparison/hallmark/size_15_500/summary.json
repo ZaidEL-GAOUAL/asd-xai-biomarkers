@@ -1,0 +1,173 @@
+{
+  "collection": "hallmark",
+  "label": "Hallmark",
+  "size_rule": "size_15_500",
+  "source_group_count": 50,
+  "included_group_count": 50,
+  "zero_match_groups": 0,
+  "excluded_by_size_count": 0,
+  "covered_gene_count": 4211,
+  "covered_gene_fraction": 0.24393210913514454,
+  "covered_absolute_gene_attribution_fraction": 0.23535721896403342,
+  "groups_with_one_to_four_genes": 0,
+  "groups_above_500_genes": 0,
+  "group_size_min": 31,
+  "group_size_median": 171.0,
+  "group_size_max": 199,
+  "genes_in_multiple_groups": 1666,
+  "max_gene_membership_count": 10,
+  "identical_mapped_group_labels": [],
+  "observed": {
+    "mean_covered_gene_overlap": 0.24,
+    "mean_all_gene_overlap": 0.02,
+    "mean_pathway_jaccard": 0.3353174603174603
+  },
+  "random_control_comparison": {
+    "mean_covered_gene_overlap": {
+      "observed": 0.24,
+      "random_mean": 0.2645,
+      "random_q025": 0.18,
+      "random_q975": 0.3552499999999999,
+      "midrank_percentile": 32.0
+    },
+    "mean_all_gene_overlap": {
+      "observed": 0.02,
+      "random_mean": 0.04629999999999999,
+      "random_q025": 0.014750000000000001,
+      "random_q975": 0.09524999999999992,
+      "midrank_percentile": 7.000000000000001
+    },
+    "mean_pathway_jaccard": {
+      "observed": 0.3353174603174603,
+      "random_mean": 0.325345238095238,
+      "random_q025": 0.18660714285714286,
+      "random_q975": 0.49151785714285695,
+      "midrank_percentile": 59.5
+    }
+  },
+  "max_logit_reconstruction_error": 1.0302869668521453e-13,
+  "top_groups": [
+    {
+      "rank": 1,
+      "group": "HALLMARK_HEME_METABOLISM",
+      "measured_gene_count": 192,
+      "mean_absolute_signed_allocation_log_odds": 0.14191264307779958,
+      "mean_signed_allocation_log_odds": 0.0015792658371556155,
+      "mean_absolute_gene_mass_log_odds": 0.5456313714951966,
+      "mean_cancellation_fraction": 0.7492127121614748,
+      "top_driver_gene_id": "2057",
+      "top_driver_mass_share": 0.020689751674378563,
+      "top5_driver_mass_share": 0.08563042608742971
+    },
+    {
+      "rank": 2,
+      "group": "HALLMARK_INTERFERON_GAMMA_RESPONSE",
+      "measured_gene_count": 191,
+      "mean_absolute_signed_allocation_log_odds": 0.07114114750281023,
+      "mean_signed_allocation_log_odds": -0.0027781185760642735,
+      "mean_absolute_gene_mass_log_odds": 0.2953399501219967,
+      "mean_cancellation_fraction": 0.790757371008614,
+      "top_driver_gene_id": "9934",
+      "top_driver_mass_share": 0.04469290347323371,
+      "top5_driver_mass_share": 0.1672462395000363
+    },
+    {
+      "rank": 3,
+      "group": "HALLMARK_ALLOGRAFT_REJECTION",
+      "measured_gene_count": 188,
+      "mean_absolute_signed_allocation_log_odds": 0.0609644630439054,
+      "mean_signed_allocation_log_odds": -0.0014792118097229532,
+      "mean_absolute_gene_mass_log_odds": 0.3830315557856046,
+      "mean_cancellation_fraction": 0.8346426792769763,
+      "top_driver_gene_id": "3112",
+      "top_driver_mass_share": 0.027139529864538752,
+      "top5_driver_mass_share": 0.10739916541849014
+    },
+    {
+      "rank": 4,
+      "group": "HALLMARK_G2M_CHECKPOINT",
+      "measured_gene_count": 194,
+      "mean_absolute_signed_allocation_log_odds": 0.06093311217088192,
+      "mean_signed_allocation_log_odds": 0.0036579007033395294,
+      "mean_absolute_gene_mass_log_odds": 0.3371614263607805,
+      "mean_cancellation_fraction": 0.8213289732544145,
+      "top_driver_gene_id": "7290",
+      "top_driver_mass_share": 0.029645949179703472,
+      "top5_driver_mass_share": 0.10628505701647957
+    },
+    {
+      "rank": 5,
+      "group": "HALLMARK_IL2_STAT5_SIGNALING",
+      "measured_gene_count": 195,
+      "mean_absolute_signed_allocation_log_odds": 0.059565213807702216,
+      "mean_signed_allocation_log_odds": -0.002475497805630486,
+      "mean_absolute_gene_mass_log_odds": 0.43127310579235734,
+      "mean_cancellation_fraction": 0.8589897138319567,
+      "top_driver_gene_id": "6335",
+      "top_driver_mass_share": 0.024652042741662824,
+      "top5_driver_mass_share": 0.10878478552350038
+    },
+    {
+      "rank": 6,
+      "group": "HALLMARK_COMPLEMENT",
+      "measured_gene_count": 195,
+      "mean_absolute_signed_allocation_log_odds": 0.058669566032620024,
+      "mean_signed_allocation_log_odds": 0.0023744707366421067,
+      "mean_absolute_gene_mass_log_odds": 0.4195116058173647,
+      "mean_cancellation_fraction": 0.8628429858961939,
+      "top_driver_gene_id": "146547",
+      "top_driver_mass_share": 0.030984927913015905,
+      "top5_driver_mass_share": 0.1325679796229129
+    },
+    {
+      "rank": 7,
+      "group": "HALLMARK_E2F_TARGETS",
+      "measured_gene_count": 194,
+      "mean_absolute_signed_allocation_log_odds": 0.05527075117703795,
+      "mean_signed_allocation_log_odds": 0.0023347996770987874,
+      "mean_absolute_gene_mass_log_odds": 0.38418169187729667,
+      "mean_cancellation_fraction": 0.8472213614220955,
+      "top_driver_gene_id": "51747",
+      "top_driver_mass_share": 0.023222695683247526,
+      "top5_driver_mass_share": 0.10985951497090138
+    },
+    {
+      "rank": 8,
+      "group": "HALLMARK_MITOTIC_SPINDLE",
+      "measured_gene_count": 198,
+      "mean_absolute_signed_allocation_log_odds": 0.05419973443644255,
+      "mean_signed_allocation_log_odds": 0.0019724721898282003,
+      "mean_absolute_gene_mass_log_odds": 0.4405919751598163,
+      "mean_cancellation_fraction": 0.8706052413137959,
+      "top_driver_gene_id": "8440",
+      "top_driver_mass_share": 0.025709123110261987,
+      "top5_driver_mass_share": 0.11408339699933223
+    },
+    {
+      "rank": 9,
+      "group": "HALLMARK_KRAS_SIGNALING_UP",
+      "measured_gene_count": 195,
+      "mean_absolute_signed_allocation_log_odds": 0.05282406327489434,
+      "mean_signed_allocation_log_odds": 0.002693398281741119,
+      "mean_absolute_gene_mass_log_odds": 0.48235174818297477,
+      "mean_cancellation_fraction": 0.890463831414987,
+      "top_driver_gene_id": "5801",
+      "top_driver_mass_share": 0.025783144344277444,
+      "top5_driver_mass_share": 0.10062549243104278
+    },
+    {
+      "rank": 10,
+      "group": "HALLMARK_GLYCOLYSIS",
+      "measured_gene_count": 193,
+      "mean_absolute_signed_allocation_log_odds": 0.05043393055160355,
+      "mean_signed_allocation_log_odds": 0.0035810871450672652,
+      "mean_absolute_gene_mass_log_odds": 0.3761221681132275,
+      "mean_cancellation_fraction": 0.8663264022387456,
+      "top_driver_gene_id": "5207",
+      "top_driver_mass_share": 0.0340415206382047,
+      "top5_driver_mass_share": 0.13421047595856003
+    }
+  ],
+  "records_explained": 261,
+  "identical_to_primary": true
+}

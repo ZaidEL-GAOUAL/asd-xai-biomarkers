@@ -1,0 +1,36 @@
+{
+  "purpose": "Frozen GEO metadata inputs for the recorded study; gzip container timestamps may differ",
+  "hash_scope": "SHA256 of decompressed contents; platform files are GEO annotation tables, not full platform-family SOFT files",
+  "files": [
+    {
+      "file": "GSE18123-GPL570_series_matrix.txt.gz",
+      "source_page": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18123",
+      "download_label": "Series Matrix File(s), GPL570",
+      "decompressed_sha256": "c3da2869a7453a82b04272dfe6a86cd13d93226f6c9c0740ede809c92d8d002f"
+    },
+    {
+      "file": "GSE18123-GPL6244_series_matrix.txt.gz",
+      "source_page": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18123",
+      "download_label": "Series Matrix File(s), GPL6244",
+      "decompressed_sha256": "b860ec28b7c98a37de883a7c03151b8e11351a96e51fea39d1ed680662dabe1f"
+    },
+    {
+      "file": "GSE6575_series_matrix.txt.gz",
+      "source_page": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE6575",
+      "download_label": "Series Matrix File(s), GPL570",
+      "decompressed_sha256": "2f91d10f3dc4f57c9203abd7c7aa708c3b2fc214aec70cc05839bb7ac2c912fc"
+    },
+    {
+      "file": "GPL570.gz",
+      "source_page": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570",
+      "download_label": "Annotation SOFT table, annotation date Aug 09 2016; save compressed file as GPL570.gz",
+      "decompressed_sha256": "67f6a717077733d156e7445e33ef156eec89abb46084a4aa12a89c1909c17c80"
+    },
+    {
+      "file": "GPL6244.gz",
+      "source_page": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL6244",
+      "download_label": "Annotation SOFT table, annotation date Aug 09 2016; save compressed file as GPL6244.gz",
+      "decompressed_sha256": "07e5f7fd7d3a14f690b22dafeb9816e9cc20c80775d672a23d634e8edd6d90c8"
+    }
+  ]
+}

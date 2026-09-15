@@ -1,0 +1,189 @@
+{
+  "collection": "go_bp",
+  "label": "GO Biological Process",
+  "size_rule": "primary",
+  "source_group_count": 7538,
+  "included_group_count": 7535,
+  "zero_match_groups": 3,
+  "excluded_by_size_count": 0,
+  "covered_gene_count": 14677,
+  "covered_gene_fraction": 0.8501998493888664,
+  "covered_absolute_gene_attribution_fraction": 0.8422970856824802,
+  "groups_with_one_to_four_genes": 236,
+  "groups_above_500_genes": 230,
+  "group_size_min": 1,
+  "group_size_median": 18.0,
+  "group_size_max": 1824,
+  "genes_in_multiple_groups": 14358,
+  "max_gene_membership_count": 768,
+  "identical_mapped_group_labels": [
+    [
+      "GOBP_NEGATIVE_REGULATION_OF_HEPATOCYTE_APOPTOTIC_PROCESS",
+      "GOBP_REGULATION_OF_HEPATOCYTE_APOPTOTIC_PROCESS"
+    ],
+    [
+      "GOBP_POSITIVE_REGULATION_OF_ARTERY_MORPHOGENESIS",
+      "GOBP_REGULATION_OF_ARTERY_MORPHOGENESIS"
+    ],
+    [
+      "GOBP_POSITIVE_REGULATION_OF_LIPOPROTEIN_TRANSPORT",
+      "GOBP_REGULATION_OF_LIPOPROTEIN_TRANSPORT"
+    ],
+    [
+      "GOBP_POSITIVE_REGULATION_OF_MESENCHYMAL_STEM_CELL_PROLIFERATION",
+      "GOBP_REGULATION_OF_MESENCHYMAL_STEM_CELL_PROLIFERATION"
+    ]
+  ],
+  "observed": {
+    "mean_covered_gene_overlap": 0.26,
+    "mean_all_gene_overlap": 0.16,
+    "mean_pathway_jaccard": 0.46428571428571425
+  },
+  "random_control_comparison": {
+    "mean_covered_gene_overlap": {
+      "observed": 0.26,
+      "random_mean": 0.3615,
+      "random_q025": 0.22949999999999998,
+      "random_q975": 0.48524999999999996,
+      "midrank_percentile": 6.999999999999999
+    },
+    "mean_all_gene_overlap": {
+      "observed": 0.16,
+      "random_mean": 0.2694,
+      "random_q025": 0.17475000000000002,
+      "random_q975": 0.37,
+      "midrank_percentile": 1.5
+    },
+    "mean_pathway_jaccard": {
+      "observed": 0.46428571428571425,
+      "random_mean": 0.5480158730158731,
+      "random_q025": 0.3245039682539682,
+      "random_q975": 0.7864285714285713,
+      "midrank_percentile": 26.5
+    }
+  },
+  "max_logit_reconstruction_error": 1.3855583347321954e-13,
+  "top_groups": [
+    {
+      "rank": 1,
+      "group": "GOBP_NEGATIVE_REGULATION_OF_NUCLEOBASE_CONTAINING_COMPOUND_METABOLIC_PROCESS",
+      "measured_gene_count": 1504,
+      "mean_absolute_signed_allocation_log_odds": 0.054780859643123465,
+      "mean_signed_allocation_log_odds": 0.004959393140439785,
+      "mean_absolute_gene_mass_log_odds": 0.3939793775584953,
+      "mean_cancellation_fraction": 0.8615696011444169,
+      "top_driver_gene_id": "10389",
+      "top_driver_mass_share": 0.01596507174111506,
+      "top5_driver_mass_share": 0.054306716091700395
+    },
+    {
+      "rank": 2,
+      "group": "GOBP_NEGATIVE_REGULATION_OF_RNA_BIOSYNTHETIC_PROCESS",
+      "measured_gene_count": 1271,
+      "mean_absolute_signed_allocation_log_odds": 0.05305344119299649,
+      "mean_signed_allocation_log_odds": 0.004812560816668135,
+      "mean_absolute_gene_mass_log_odds": 0.3760486448920496,
+      "mean_cancellation_fraction": 0.8596640175994364,
+      "top_driver_gene_id": "10389",
+      "top_driver_mass_share": 0.016726317492905332,
+      "top5_driver_mass_share": 0.056896166210613545
+    },
+    {
+      "rank": 3,
+      "group": "GOBP_RNA_PROCESSING",
+      "measured_gene_count": 914,
+      "mean_absolute_signed_allocation_log_odds": 0.04512510869984833,
+      "mean_signed_allocation_log_odds": 0.0002478066337510485,
+      "mean_absolute_gene_mass_log_odds": 0.27456115946150295,
+      "mean_cancellation_fraction": 0.8369945410339678,
+      "top_driver_gene_id": "619505",
+      "top_driver_mass_share": 0.0506980125906535,
+      "top5_driver_mass_share": 0.12299684831021576
+    },
+    {
+      "rank": 4,
+      "group": "GOBP_G_PROTEIN_COUPLED_RECEPTOR_SIGNALING_PATHWAY",
+      "measured_gene_count": 920,
+      "mean_absolute_signed_allocation_log_odds": 0.04429879136890968,
+      "mean_signed_allocation_log_odds": -0.0025653020629575005,
+      "mean_absolute_gene_mass_log_odds": 0.3442602879052665,
+      "mean_cancellation_fraction": 0.8756904026867743,
+      "top_driver_gene_id": "116535",
+      "top_driver_mass_share": 0.036416324278048924,
+      "top5_driver_mass_share": 0.15557335811064094
+    },
+    {
+      "rank": 5,
+      "group": "GOBP_PROTEOLYSIS",
+      "measured_gene_count": 1423,
+      "mean_absolute_signed_allocation_log_odds": 0.0378803512942209,
+      "mean_signed_allocation_log_odds": 0.00025501122580671044,
+      "mean_absolute_gene_mass_log_odds": 0.4179016583266978,
+      "mean_cancellation_fraction": 0.9067651163777233,
+      "top_driver_gene_id": "146547",
+      "top_driver_mass_share": 0.031104295965159543,
+      "top5_driver_mass_share": 0.11749097123776037
+    },
+    {
+      "rank": 6,
+      "group": "GOBP_NEGATIVE_REGULATION_OF_TRANSCRIPTION_BY_RNA_POLYMERASE_II",
+      "measured_gene_count": 949,
+      "mean_absolute_signed_allocation_log_odds": 0.03717806586288901,
+      "mean_signed_allocation_log_odds": 0.003749709335981628,
+      "mean_absolute_gene_mass_log_odds": 0.25931768998146254,
+      "mean_cancellation_fraction": 0.852834098018299,
+      "top_driver_gene_id": "51351",
+      "top_driver_mass_share": 0.015505708536257774,
+      "top5_driver_mass_share": 0.06349154576977373
+    },
+    {
+      "rank": 7,
+      "group": "GOBP_POSITIVE_REGULATION_OF_RNA_METABOLIC_PROCESS",
+      "measured_gene_count": 1750,
+      "mean_absolute_signed_allocation_log_odds": 0.03544104789913636,
+      "mean_signed_allocation_log_odds": -1.6440139192078004e-05,
+      "mean_absolute_gene_mass_log_odds": 0.39097592301944906,
+      "mean_cancellation_fraction": 0.910454547576957,
+      "top_driver_gene_id": "341032",
+      "top_driver_mass_share": 0.022080665308056992,
+      "top5_driver_mass_share": 0.0802598370599818
+    },
+    {
+      "rank": 8,
+      "group": "GOBP_CELL_ADHESION",
+      "measured_gene_count": 1419,
+      "mean_absolute_signed_allocation_log_odds": 0.031994659826951925,
+      "mean_signed_allocation_log_odds": 0.0011002369887438911,
+      "mean_absolute_gene_mass_log_odds": 0.31060189328838517,
+      "mean_cancellation_fraction": 0.8887770783349281,
+      "top_driver_gene_id": "8778",
+      "top_driver_mass_share": 0.03241224703969338,
+      "top5_driver_mass_share": 0.13484359158065246
+    },
+    {
+      "rank": 9,
+      "group": "GOBP_TRANSMEMBRANE_TRANSPORT",
+      "measured_gene_count": 1443,
+      "mean_absolute_signed_allocation_log_odds": 0.028843491192184892,
+      "mean_signed_allocation_log_odds": 0.0031252076406916695,
+      "mean_absolute_gene_mass_log_odds": 0.28863630951043107,
+      "mean_cancellation_fraction": 0.9052512276084747,
+      "top_driver_gene_id": "113655",
+      "top_driver_mass_share": 0.02557599603171276,
+      "top5_driver_mass_share": 0.11008499589981165
+    },
+    {
+      "rank": 10,
+      "group": "GOBP_POSITIVE_REGULATION_OF_TRANSCRIPTION_BY_RNA_POLYMERASE_II",
+      "measured_gene_count": 1197,
+      "mean_absolute_signed_allocation_log_odds": 0.02867493480714773,
+      "mean_signed_allocation_log_odds": 0.00044062955352970373,
+      "mean_absolute_gene_mass_log_odds": 0.25128477666349425,
+      "mean_cancellation_fraction": 0.8840671216981629,
+      "top_driver_gene_id": "7552",
+      "top_driver_mass_share": 0.02419875031578628,
+      "top5_driver_mass_share": 0.09619436152438195
+    }
+  ],
+  "records_explained": 261
+}

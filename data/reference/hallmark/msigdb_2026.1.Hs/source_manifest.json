@@ -1,0 +1,22 @@
+{
+  "collection": "MSigDB human Hallmark (H)",
+  "version": "2026.1.Hs",
+  "organism": "Homo sapiens",
+  "identifier_type": "NCBI Entrez Gene ID",
+  "file": "h.all.v2026.1.Hs.entrez.gmt",
+  "source_url": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2026.1.Hs/h.all.v2026.1.Hs.entrez.gmt",
+  "official_index": "https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2026.1.Hs/",
+  "retrieved_date_utc": "2026-09-07",
+  "sha256": "7b3c4de012b2a3aa8f90e5452c21fc8c116a31c30dd98ec00253816152ac9072",
+  "bytes": 43213,
+  "expected_sets": 50,
+  "modifications": "None. Original official GMT bytes retained.",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "terms_url": "https://www.gsea-msigdb.org/gsea/msigdb_license_terms.jsp",
+  "attribution": "MSigDB: Broad Institute, Massachusetts Institute of Technology, and Regents of the University of California.",
+  "citations": [
+    {"reference": "Liberzon et al. (2015). The Molecular Signatures Database (MSigDB) hallmark gene set collection.", "doi": "10.1016/j.cels.2015.12.004"},
+    {"reference": "Subramanian et al. (2005). Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles.", "doi": "10.1073/pnas.0506580102"}
+  ]
+}

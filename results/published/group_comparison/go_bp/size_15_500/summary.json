@@ -1,0 +1,172 @@
+{
+  "collection": "go_bp",
+  "label": "GO Biological Process",
+  "size_rule": "size_15_500",
+  "source_group_count": 7538,
+  "included_group_count": 3993,
+  "zero_match_groups": 3,
+  "excluded_by_size_count": 3542,
+  "covered_gene_count": 13848,
+  "covered_gene_fraction": 0.8021780687018479,
+  "covered_absolute_gene_attribution_fraction": 0.7896583643131597,
+  "groups_with_one_to_four_genes": 0,
+  "groups_above_500_genes": 0,
+  "group_size_min": 15,
+  "group_size_median": 42.0,
+  "group_size_max": 499,
+  "genes_in_multiple_groups": 13138,
+  "max_gene_membership_count": 553,
+  "identical_mapped_group_labels": [],
+  "observed": {
+    "mean_covered_gene_overlap": 0.09999999999999999,
+    "mean_all_gene_overlap": 0.06999999999999999,
+    "mean_pathway_jaccard": 0.3492063492063492
+  },
+  "random_control_comparison": {
+    "mean_covered_gene_overlap": {
+      "observed": 0.09999999999999999,
+      "random_mean": 0.1377,
+      "random_q025": 0.06475000000000002,
+      "random_q975": 0.21049999999999985,
+      "midrank_percentile": 15.0
+    },
+    "mean_all_gene_overlap": {
+      "observed": 0.06999999999999999,
+      "random_mean": 0.09980000000000003,
+      "random_q025": 0.044750000000000005,
+      "random_q975": 0.16,
+      "midrank_percentile": 18.0
+    },
+    "mean_pathway_jaccard": {
+      "observed": 0.3492063492063492,
+      "random_mean": 0.3976468253968254,
+      "random_q025": 0.22286706349206348,
+      "random_q975": 0.6122619047619047,
+      "midrank_percentile": 35.0
+    }
+  },
+  "max_logit_reconstruction_error": 1.1368683772161603e-13,
+  "top_groups": [
+    {
+      "rank": 1,
+      "group": "GOBP_MRNA_PROCESSING",
+      "measured_gene_count": 459,
+      "mean_absolute_signed_allocation_log_odds": 0.030930944343645163,
+      "mean_signed_allocation_log_odds": 0.0002331789052092659,
+      "mean_absolute_gene_mass_log_odds": 0.16945891999278312,
+      "mean_cancellation_fraction": 0.829221789740567,
+      "top_driver_gene_id": "9785",
+      "top_driver_mass_share": 0.01774043255167525,
+      "top5_driver_mass_share": 0.07590564963858484
+    },
+    {
+      "rank": 2,
+      "group": "GOBP_RNA_SPLICING",
+      "measured_gene_count": 421,
+      "mean_absolute_signed_allocation_log_odds": 0.030531688071817786,
+      "mean_signed_allocation_log_odds": 0.0009915334552273612,
+      "mean_absolute_gene_mass_log_odds": 0.15684537506852975,
+      "mean_cancellation_fraction": 0.8102722221762388,
+      "top_driver_gene_id": "9785",
+      "top_driver_mass_share": 0.019167122646097684,
+      "top5_driver_mass_share": 0.08409782962984723
+    },
+    {
+      "rank": 3,
+      "group": "GOBP_SMALL_GTPASE_MEDIATED_SIGNAL_TRANSDUCTION",
+      "measured_gene_count": 491,
+      "mean_absolute_signed_allocation_log_odds": 0.028586154046921153,
+      "mean_signed_allocation_log_odds": 0.0009242003937312915,
+      "mean_absolute_gene_mass_log_odds": 0.19603084938842882,
+      "mean_cancellation_fraction": 0.8561096992773785,
+      "top_driver_gene_id": "115273",
+      "top_driver_mass_share": 0.04997607910859883,
+      "top5_driver_mass_share": 0.17926831497953966
+    },
+    {
+      "rank": 4,
+      "group": "GOBP_PROTEASOME_MEDIATED_UBIQUITIN_DEPENDENT_PROTEIN_CATABOLIC_PROCESS",
+      "measured_gene_count": 487,
+      "mean_absolute_signed_allocation_log_odds": 0.027705529664575675,
+      "mean_signed_allocation_log_odds": -0.0021012574994650397,
+      "mean_absolute_gene_mass_log_odds": 0.2436466284602892,
+      "mean_cancellation_fraction": 0.8826077556222285,
+      "top_driver_gene_id": "166348",
+      "top_driver_mass_share": 0.05601220767701956,
+      "top5_driver_mass_share": 0.17473420219245536
+    },
+    {
+      "rank": 5,
+      "group": "GOBP_EXTERNAL_ENCAPSULATING_STRUCTURE_ORGANIZATION",
+      "measured_gene_count": 314,
+      "mean_absolute_signed_allocation_log_odds": 0.027255031986417096,
+      "mean_signed_allocation_log_odds": -0.0004586184933503506,
+      "mean_absolute_gene_mass_log_odds": 0.18325089530652733,
+      "mean_cancellation_fraction": 0.8571440662104993,
+      "top_driver_gene_id": "11095",
+      "top_driver_mass_share": 0.052920888809458694,
+      "top5_driver_mass_share": 0.19060458005676068
+    },
+    {
+      "rank": 6,
+      "group": "GOBP_HOMOPHILIC_CELL_CELL_ADHESION",
+      "measured_gene_count": 133,
+      "mean_absolute_signed_allocation_log_odds": 0.02559029717768389,
+      "mean_signed_allocation_log_odds": -0.0005716457791358803,
+      "mean_absolute_gene_mass_log_odds": 0.1252867833096921,
+      "mean_cancellation_fraction": 0.8074104760082614,
+      "top_driver_gene_id": "56128",
+      "top_driver_mass_share": 0.0880900455489684,
+      "top5_driver_mass_share": 0.31924051863886643
+    },
+    {
+      "rank": 7,
+      "group": "GOBP_CILIUM_ORGANIZATION",
+      "measured_gene_count": 450,
+      "mean_absolute_signed_allocation_log_odds": 0.025199788464844226,
+      "mean_signed_allocation_log_odds": -0.0007787488839051935,
+      "mean_absolute_gene_mass_log_odds": 0.22429004527376428,
+      "mean_cancellation_fraction": 0.8844112509204195,
+      "top_driver_gene_id": "138639",
+      "top_driver_mass_share": 0.051253063115824136,
+      "top5_driver_mass_share": 0.1885536080532976
+    },
+    {
+      "rank": 8,
+      "group": "GOBP_PROTEIN_FOLDING",
+      "measured_gene_count": 193,
+      "mean_absolute_signed_allocation_log_odds": 0.023807779211944335,
+      "mean_signed_allocation_log_odds": 0.0006894678338830352,
+      "mean_absolute_gene_mass_log_odds": 0.12105921870954958,
+      "mean_cancellation_fraction": 0.8171048070069132,
+      "top_driver_gene_id": "10693",
+      "top_driver_mass_share": 0.06608195887358415,
+      "top5_driver_mass_share": 0.22201296637424955
+    },
+    {
+      "rank": 9,
+      "group": "GOBP_RIBONUCLEOPROTEIN_COMPLEX_BIOGENESIS",
+      "measured_gene_count": 460,
+      "mean_absolute_signed_allocation_log_odds": 0.02177461019916174,
+      "mean_signed_allocation_log_odds": 0.0023679661786836486,
+      "mean_absolute_gene_mass_log_odds": 0.14561243951611708,
+      "mean_cancellation_fraction": 0.8462032032207178,
+      "top_driver_gene_id": "26747",
+      "top_driver_mass_share": 0.018896318024602326,
+      "top5_driver_mass_share": 0.07818794933350079
+    },
+    {
+      "rank": 10,
+      "group": "GOBP_MITOCHONDRIAL_GENE_EXPRESSION",
+      "measured_gene_count": 161,
+      "mean_absolute_signed_allocation_log_odds": 0.021711705595414747,
+      "mean_signed_allocation_log_odds": -0.001876625184177074,
+      "mean_absolute_gene_mass_log_odds": 0.12862252678451874,
+      "mean_cancellation_fraction": 0.8545405796488498,
+      "top_driver_gene_id": "51069",
+      "top_driver_mass_share": 0.03255566180838507,
+      "top5_driver_mass_share": 0.1328310406457501
+    }
+  ],
+  "records_explained": 261
+}
